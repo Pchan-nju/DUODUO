@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue_alice">#FFF0F8FF</color>
+    <color name="purple_lavender">#FFE6E6FA</color>
+    <color name="blue_sky">#FF87CEEB</color>
+    <color name="blue_royal">#4169E1</color>
+    <color name="blue_corn_flower">#FF6495ED</color>
+    <color name="background_blue_tint_state">#03EFEFFB</color>
+    <color name="blue_tint_state">#FFE6E4F6</color>
+    <color name="blue_light_state">#FF8470FF</color>
+    <color name="blue_dark_state">#FF483D8B</color>
 </resources>
