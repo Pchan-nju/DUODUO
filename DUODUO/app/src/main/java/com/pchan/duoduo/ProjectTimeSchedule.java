@@ -22,10 +22,30 @@ public class ProjectTimeSchedule {
     final private String currentDateString = ft.format(currentDate);
 
     private String deadlineDateString = "";
-    private String beginingDateString = "";  // 从本地文件中读取或者读入
+    private String beginningDateString = "";  // 从本地文件中读取或者读入
+    private String[] stageDateStrings = new String[5]; // 最多设置5个中间阶段时间点
+    private int sumOfStageDate = 0;
+
+    public ProjectTimeSchedule(String beginningDateString, String deadlineDateString, String... stageDateStrings) {
+        this.beginningDateString = beginningDateString;
+        this.deadlineDateString = deadlineDateString;
+        for (String dateString: stageDateStrings) {
+            stageDateStrings[sumOfStageDate] = dateString;
+            sumOfStageDate++;
+        }
+    }
+
+    public ProjectTimeSchedule(String beginningDateString, String deadlineDateString) {
+        this.beginningDateString = beginningDateString;
+        this.deadlineDateString = deadlineDateString;
+    }
 
     public ProjectTimeSchedule() {
         // TODO();
+    }
+
+    protected int getSumOfStageDate() {
+        return sumOfStageDate;
     }
 
     public void setDeadline() {
@@ -52,6 +72,18 @@ public class ProjectTimeSchedule {
 
     /*******已经过去的天数占总计划时长的比例********/
     public float ratioOfPassedDays() {
-        return (float) daysBetween(beginingDateString, currentDateString) / daysBetween(beginingDateString, deadlineDateString);
+        return (float) daysBetween(beginningDateString, currentDateString) / daysBetween(beginningDateString, deadlineDateString);
+    }
+
+    /**
+     * 计算各阶段时间占总时长的比例
+     * @return ratios of every StageDays in the whole schedule
+     */
+    public float[] ratioOfStageDays() {
+        float[] ratios = new float[sumOfStageDate];
+        for (int i = 0; i < sumOfStageDate; i++) {
+            ratios[i] = (float) daysBetween(beginningDateString, stageDateStrings[i]) / daysBetween(beginningDateString, deadlineDateString);
+        }
+        return ratios;
     }
 }

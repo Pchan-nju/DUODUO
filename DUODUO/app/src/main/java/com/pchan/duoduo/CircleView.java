@@ -7,11 +7,11 @@ import android.view.View;
 
 /*绘制进度圈*/
 public class CircleView extends View {
-    private int circleColor = 0xFF0000;
-    private Paint.Style circleStyle = Paint.Style.FILL;
-    private float circleRadius = 1.0f;
-    private float circleCenterPositionX = 0.0f;
-    private float circleCenterPositionY = 0.0f;
+    protected int circleColor = 0xFF0000;
+    protected Paint.Style circleStyle = Paint.Style.FILL;
+    protected float circleRadius = 1.0f;
+    protected float circleCenterPositionX = 0.0f;
+    protected float circleCenterPositionY = 0.0f;
 
     public CircleView(Context context) {
         super(context);
@@ -40,6 +40,7 @@ public class CircleView extends View {
         setCircleStyle(style);
         setCircleCenterPosition(x, y);
     }
+
 
     @Override
     protected void onDraw(Canvas canvas) {
