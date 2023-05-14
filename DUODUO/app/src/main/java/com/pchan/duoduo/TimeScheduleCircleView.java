@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 
 /***根据已有的ProjectTimeSchedule确定展示***/
@@ -33,21 +34,23 @@ public class TimeScheduleCircleView extends View {
 
         /**绘制不同大小的圆**/
         /**先画deadline的圆**/
-        paint.setColor(0xFFFFB6C1);
+        paint.setColor(0x4FFFB6C1);
         paint.setStyle(Paint.Style.FILL);
         canvas.drawCircle(centerPositionX, centerPositionY, radius, paint);
 
-        /**画各个阶段的圆**/
-        int[] stageColors = {0xFFFFFF, 0xFFFFFFF, 0xFFFFFFF, 0xFFFFFFF};
-        float[] ratiosOfStages = projectTimeSchedule.ratioOfStageDays();
-        for (int i = 0; i < projectTimeSchedule.getSumOfStageDate(); i++) {
-            paint.setColor(stageColors[i]);
-            canvas.drawCircle(centerPositionX, centerPositionY, radius * ratiosOfStages[i], paint);
-        }
-
-        /**画currentDate的圈**/
-        paint.setColor(0xFFFFFF);
+        /**画currentDate的圆**/
+        paint.setColor(0x6FE6E6FA);
+        paint.setStrokeWidth(5);
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         canvas.drawCircle(centerPositionX, centerPositionY, radius * projectTimeSchedule.ratioOfPassedDays(), paint);
+
+        /**画各个阶段的圆**/
+        float[] ratiosOfStages = projectTimeSchedule.ratioOfStageDays();
+        paint.setStyle(Paint.Style.STROKE);
+        for (int i = projectTimeSchedule.getSumOfStageDate() - 1; i >= 0 ; i--) {
+            Log.d("LoadStageCircle", "success id " + ratiosOfStages[i]);
+            paint.setColor(0xFFC1BED5);
+            canvas.drawCircle(centerPositionX, centerPositionY, radius * ratiosOfStages[i], paint);
+        }
     }
 }

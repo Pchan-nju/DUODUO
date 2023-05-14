@@ -1,6 +1,7 @@
 package com.pchan.duoduo;
 
 import android.icu.text.SimpleDateFormat;
+import android.util.Log;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -23,15 +24,15 @@ public class ProjectTimeSchedule {
 
     private String deadlineDateString = "";
     private String beginningDateString = "";  // 从本地文件中读取或者读入
-    private String[] stageDateStrings = new String[5]; // 最多设置5个中间阶段时间点
+    private String[] stageDateStrings = {"", "", "", "", ""}; // 最多设置5个中间阶段时间点
     private int sumOfStageDate = 0;
 
     public ProjectTimeSchedule(String beginningDateString, String deadlineDateString, String... stageDateStrings) {
         this.beginningDateString = beginningDateString;
         this.deadlineDateString = deadlineDateString;
-        for (String dateString: stageDateStrings) {
-            stageDateStrings[sumOfStageDate] = dateString;
-            sumOfStageDate++;
+        sumOfStageDate = stageDateStrings.length;
+        for (int i = 0; i < sumOfStageDate; i++) {
+            this.stageDateStrings[i] += stageDateStrings[i];
         }
     }
 
@@ -57,10 +58,14 @@ public class ProjectTimeSchedule {
         try {
             Date date1 = ft.parse(dateString1);
             Date date2 = ft.parse(dateString2);
+            Log.d("date1", date1.toString());
+            Log.d("date2", date2.toString());
             long diff = date2.getTime() - date1.getTime();
-            long daysBetween = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+            long daysBetween = diff / 86400000;
+            Log.d(dateString1 + " to " + dateString2, "" + daysBetween);
             return (int)daysBetween;
         } catch (Exception e) {
+            Log.d("daysBetween", "ERROR");
             e.printStackTrace();
             return -1;
         }
@@ -81,9 +86,16 @@ public class ProjectTimeSchedule {
      */
     public float[] ratioOfStageDays() {
         float[] ratios = new float[sumOfStageDate];
+        Log.d("sum of stage date", "" + sumOfStageDate);
         for (int i = 0; i < sumOfStageDate; i++) {
-            ratios[i] = (float) daysBetween(beginningDateString, stageDateStrings[i]) / daysBetween(beginningDateString, deadlineDateString);
+            float x = (float) daysBetween(beginningDateString, stageDateStrings[i]);
+            float y = (float) daysBetween(beginningDateString, deadlineDateString);
+            Log.d("ratio of stage[" + i + "]=" + stageDateStrings[i], x + " / " + y + " = " + (x / y));
+            ratios[i] = x / y;
+//            ratios[i] = (float) daysBetween(beginningDateString, stageDateStrings[i]) / daysBetween(beginningDateString, deadlineDateString);
+            Log.d("ratio id " + i, "" + ratios[i]);
         }
+        Log.d("ratios", ratios.toString());
         return ratios;
     }
 }

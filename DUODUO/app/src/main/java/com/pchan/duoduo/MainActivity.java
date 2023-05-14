@@ -3,12 +3,15 @@ package com.pchan.duoduo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = sp.edit();
             editor.putInt("sum", 1);
             editor.apply();
+            Intent intent = new Intent(this, StartActivity.class);
+            startActivity(intent);
             // TODO();
         } else {
             Log.d("Start", "already have " + sumOfUserProjects + " projects");
@@ -40,15 +45,31 @@ public class MainActivity extends AppCompatActivity {
         int centerY = displayMetrics.heightPixels / 2;
 
         /*在屏幕中央绘制圆形*/
-        CircleView circleView = new CircleView(this);
-        circleView.setCircle(0xFFFFB6C1, Paint.Style.FILL, 400.0f, centerX,centerY);    // 设置圆形参数
+//        CircleView circleView = new CircleView(this);
+//        circleView.setCircle(0xFFFFB6C1, Paint.Style.FILL, 400.0f, centerX,centerY);    // 设置圆形参数
         ConstraintLayout constraintLayout = (ConstraintLayout) findViewById(R.id.activity_main);
-        constraintLayout.addView(circleView);
-        circleView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("circleView", "HaHaHa");
-            }
-        });
+//        constraintLayout.addView(circleView);
+//        circleView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d("circleView", "HaHaHa");
+//            }
+//        });
+
+        /*****初始化一个ProjectTimeSchedule实例，并应用于timeScheduleCircleView*****/
+        ProjectTimeSchedule projectTimeSchedule = new ProjectTimeSchedule("2023-01-01", "2023-12-31", "2023-04-01", "2023-07-30");
+        TimeScheduleCircleView timeScheduleCircleView = new TimeScheduleCircleView(this);
+        timeScheduleCircleView.setProjectTimeSchedule(projectTimeSchedule);
+        timeScheduleCircleView.setCenterPosition(centerX, centerY);
+
+        /*********设置动画*********/
+        timeScheduleCircleView.setAlpha(0f);
+        ScaleAnimation scaleAnimation = new ScaleAnimation(0f, 1f, 0f, 1f,
+                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        scaleAnimation.setDuration(500);
+        timeScheduleCircleView.startAnimation(scaleAnimation);
+        timeScheduleCircleView.animate().alpha(1f).setDuration(500);
+
+        constraintLayout.addView(timeScheduleCircleView);
     }
 }
