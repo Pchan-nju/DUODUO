@@ -7,6 +7,8 @@ import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +24,13 @@ public class MainActivity extends AppCompatActivity {
         final SharedPreferences sp = getSharedPreferences("user_project", MODE_PRIVATE);
         int sumOfUserProjects = sp.getInt("sum",0);
         if (sumOfUserProjects == 0) {
+            Log.d("Start", "A new project");
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt("sum", 1);
+            editor.apply();
             // TODO();
+        } else {
+            Log.d("Start", "already have " + sumOfUserProjects + " projects");
         }
 
         /*获取屏幕中心坐标*/
@@ -36,5 +44,11 @@ public class MainActivity extends AppCompatActivity {
         circleView.setCircle(0xFFFFB6C1, Paint.Style.FILL, 400.0f, centerX,centerY);    // 设置圆形参数
         ConstraintLayout constraintLayout = (ConstraintLayout) findViewById(R.id.activity_main);
         constraintLayout.addView(circleView);
+        circleView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("circleView", "HaHaHa");
+            }
+        });
     }
 }
