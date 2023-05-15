@@ -13,6 +13,12 @@
         android:theme="@style/Theme.DUODUO"
         tools:targetApi="31">
         <activity
+            android:name=".StageSetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FirstSetActivity"
+            android:exported="false" />
+        <activity
             android:name=".StartActivity"
             android:exported="false" />
         <activity
