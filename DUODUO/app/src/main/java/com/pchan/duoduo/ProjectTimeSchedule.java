@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 * 日期格式均为 "yyyy-MM-dd"
 * TODO() {
 *   ProjectTimeSchedule();
-*   setDeadline();
 *   不同阶段的期望时间;
 *   是否超过了预定的时间：阶段期望时间或者deadline;
 *   到各个期望时间的天数;
@@ -49,8 +48,8 @@ public class ProjectTimeSchedule {
         return sumOfStageDate;
     }
 
-    public void setDeadline() {
-        // TODO();
+    public void setDeadline(String deadlineDateString) {
+        this.deadlineDateString = deadlineDateString;
     }
 
     /*******计算两个日期之间的天数******/
@@ -97,5 +96,20 @@ public class ProjectTimeSchedule {
         }
         Log.d("ratios", ratios.toString());
         return ratios;
+    }
+
+    /***判断是否已经逾期***/
+    public boolean ifOverDue() {
+        return daysBetween(currentDateString, deadlineDateString) < 0;
+    }
+
+    /***判断现在时间超过第几段***/
+    public int stagesOver() {
+        for (int i = sumOfStageDate - 1; i >= 0; i--) {
+            if (daysBetween(currentDateString, stageDateStrings[i]) < 0) {
+                return  i + 1;
+            }
+        }
+        return 0;
     }
 }

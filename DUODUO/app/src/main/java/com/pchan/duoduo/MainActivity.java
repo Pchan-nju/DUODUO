@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
             // TODO();
         } else {
             Log.d("Start", "already have " + sumOfUserProjects + " projects");
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt("sum", 0);
+            editor.apply();
         }
 
         /*获取屏幕中心坐标*/
