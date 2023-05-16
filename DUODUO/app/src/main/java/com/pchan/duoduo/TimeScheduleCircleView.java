@@ -34,12 +34,12 @@ public class TimeScheduleCircleView extends View {
 
         /**绘制不同大小的圆**/
         /**先画deadline的圆**/
-        paint.setColor(0x4FFFB6C1);
+        paint.setColor(0x3FE6E4F6);
         paint.setStyle(Paint.Style.FILL);
         canvas.drawCircle(centerPositionX, centerPositionY, radius, paint);
 
         /**画currentDate的圆**/
-        paint.setColor(0x6FE6E6FA);
+        paint.setColor(0x9FE6E6FA);
         paint.setStrokeWidth(5);
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         canvas.drawCircle(centerPositionX, centerPositionY, radius * projectTimeSchedule.ratioOfPassedDays(), paint);
@@ -49,7 +49,7 @@ public class TimeScheduleCircleView extends View {
         paint.setStyle(Paint.Style.STROKE);
         for (int i = projectTimeSchedule.getSumOfStageDate() - 1; i >= 0 ; i--) {
             Log.d("LoadStageCircle", "success id " + ratiosOfStages[i]);
-            paint.setColor(0xFFC1BED5);
+            paint.setColor(0x3F483D8B);
             canvas.drawCircle(centerPositionX, centerPositionY, radius * ratiosOfStages[i], paint);
         }
     }
