@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
         /*****初始化一个ProjectTimeSchedule实例，并应用于timeScheduleCircleView*****/
-        ProjectTimeSchedule projectTimeSchedule = new ProjectTimeSchedule("2023-01-01", "2023-12-31", "2023-04-01", "2023-07-30");
+        ProjectTimeSchedule projectTimeSchedule = new ProjectTimeSchedule("sample","2023-01-01", "2023-12-31", 2,"2023-04-01", "2023-07-30");
         TimeScheduleCircleView timeScheduleCircleView = new TimeScheduleCircleView(this);
         timeScheduleCircleView.setProjectTimeSchedule(projectTimeSchedule);
         timeScheduleCircleView.setCenterPosition(centerX, centerY);

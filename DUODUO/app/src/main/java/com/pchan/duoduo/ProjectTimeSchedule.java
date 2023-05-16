@@ -17,22 +17,33 @@ import java.util.concurrent.TimeUnit;
 *  }
 * */
 public class ProjectTimeSchedule {
+    private String projectName;
     final private SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
     final private Date currentDate = new Date();
     final private String currentDateString = ft.format(currentDate);
 
     private String deadlineDateString = "";
     private String beginningDateString = "";  // 从本地文件中读取或者读入
+    private String expectDateString;
     private String[] stageDateStrings = {"", "", "", "", ""}; // 最多设置5个中间阶段时间点
     private int sumOfStageDate = 0;
 
-    public ProjectTimeSchedule(String beginningDateString, String deadlineDateString, String... stageDateStrings) {
+    public ProjectTimeSchedule(String projectName,String beginningDateString, String deadlineDateString, int sumOfStageDate, String... stageDateStrings) {
+        this.projectName = projectName;
         this.beginningDateString = beginningDateString;
         this.deadlineDateString = deadlineDateString;
-        sumOfStageDate = stageDateStrings.length;
+        this.sumOfStageDate = sumOfStageDate;
         for (int i = 0; i < sumOfStageDate; i++) {
             this.stageDateStrings[i] += stageDateStrings[i];
         }
+    }
+
+    public ProjectTimeSchedule(String projectName, String beginningDateString, String expectDateString, String deadlineDateString, int sumOfStageDate) {
+        this.projectName = projectName;
+        this.beginningDateString = beginningDateString;
+        this.expectDateString = expectDateString;
+        this.deadlineDateString = deadlineDateString;
+        this.sumOfStageDate = sumOfStageDate;
     }
 
     public ProjectTimeSchedule(String beginningDateString, String deadlineDateString) {
@@ -42,6 +53,10 @@ public class ProjectTimeSchedule {
 
     public ProjectTimeSchedule() {
         // TODO();
+    }
+
+    public void setProjectName(String name) {
+        this.projectName = name;
     }
 
     protected int getSumOfStageDate() {
