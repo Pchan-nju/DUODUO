@@ -28,6 +28,7 @@ public class ProjectTimeSchedule {
     private String[] stageDateStrings = {"", "", "", "", ""}; // 最多设置5个中间阶段时间点
     private int[] sumOfStageTarget = new int[5];
     private String[][] stageTarget = new String[5][5]; // stageTarget[i][j] 表示 第 i + 1 个stage第 j + 1 个目标
+    private boolean[][] stageTargetFinish = new boolean[5][5];
 
     public ProjectTimeSchedule(String projectName,String beginningDateString, String deadlineDateString, int sumOfStageDate, String... stageDateStrings) {
         this.projectName = projectName;
@@ -38,6 +39,7 @@ public class ProjectTimeSchedule {
             this.stageDateStrings[i] += stageDateStrings[i];
         }
     }
+    public ProjectTimeSchedule() {}
 
     public ProjectTimeSchedule(String projectName, String beginningDateString, String expectDateString, String deadlineDateString, int sumOfStageDate, String[] stageDateStrings, int[] sumOfStageTarget, String[][] stageTarget) {
         this.projectName = projectName;
@@ -162,5 +164,13 @@ public class ProjectTimeSchedule {
             }
         }
         return 0;
+    }
+
+    public boolean[][] getStageTargetFinish() {
+        return stageTargetFinish;
+    }
+
+    public void setStageTargetFinish(boolean[][] stageTargetFinish) {
+        this.stageTargetFinish = stageTargetFinish;
     }
 }
