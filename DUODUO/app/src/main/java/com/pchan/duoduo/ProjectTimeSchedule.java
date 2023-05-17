@@ -18,15 +18,16 @@ import java.util.concurrent.TimeUnit;
 * */
 public class ProjectTimeSchedule {
     private String projectName;
-    final private SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
-    final private Date currentDate = new Date();
-    final private String currentDateString = ft.format(currentDate);
-
-    private String deadlineDateString = "";
-    private String beginningDateString = "";  // 从本地文件中读取或者读入
+    final private SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd"); // 不用存储
+    final private Date currentDate = new Date(); // 不用存储
+    final private String currentDateString = ft.format(currentDate); // 不用存储
+    private String beginningDateString;
     private String expectDateString;
-    private String[] stageDateStrings = {"", "", "", "", ""}; // 最多设置5个中间阶段时间点
+    private String deadlineDateString;
     private int sumOfStageDate = 0;
+    private String[] stageDateStrings = {"", "", "", "", ""}; // 最多设置5个中间阶段时间点
+    private int[] sumOfStageTarget = new int[5];
+    private String[][] stageTarget = new String[5][5]; // stageTarget[i][j] 表示 第 i + 1 个stage第 j + 1 个目标
 
     public ProjectTimeSchedule(String projectName,String beginningDateString, String deadlineDateString, int sumOfStageDate, String... stageDateStrings) {
         this.projectName = projectName;
@@ -36,6 +37,17 @@ public class ProjectTimeSchedule {
         for (int i = 0; i < sumOfStageDate; i++) {
             this.stageDateStrings[i] += stageDateStrings[i];
         }
+    }
+
+    public ProjectTimeSchedule(String projectName, String beginningDateString, String expectDateString, String deadlineDateString, int sumOfStageDate, String[] stageDateStrings, int[] sumOfStageTarget, String[][] stageTarget) {
+        this.projectName = projectName;
+        this.beginningDateString = beginningDateString;
+        this.expectDateString = expectDateString;
+        this.deadlineDateString = deadlineDateString;
+        this.sumOfStageDate = sumOfStageDate;
+        this.stageDateStrings = stageDateStrings;
+        this.sumOfStageTarget = sumOfStageTarget;
+        this.stageTarget = stageTarget;
     }
 
     public ProjectTimeSchedule(String projectName, String beginningDateString, String expectDateString, String deadlineDateString, int sumOfStageDate) {
@@ -51,12 +63,36 @@ public class ProjectTimeSchedule {
         this.deadlineDateString = deadlineDateString;
     }
 
-    public ProjectTimeSchedule() {
-        // TODO();
-    }
-
     public void setProjectName(String name) {
         this.projectName = name;
+    }
+
+    public String getProjectName() {
+        return this.projectName;
+    }
+
+    public String getBeginningDateString() {
+        return this.beginningDateString;
+    }
+
+    public String getExpectDateString() {
+        return this.expectDateString;
+    }
+
+    public String getDeadlineDateString() {
+        return this.deadlineDateString;
+    }
+
+    public String[] getStageDateStrings() {
+        return this.stageDateStrings;
+    }
+
+    public int[] getSumOfStageTarget() {
+        return this.sumOfStageTarget;
+    }
+
+    public String[][] getStageTarget() {
+        return this.stageTarget;
     }
 
     protected int getSumOfStageDate() {

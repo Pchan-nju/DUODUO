@@ -2,7 +2,7 @@ package com.pchan.duoduo;
 
 public class ProjectTimeScheduleFileIO {
     /*******创建新的文件储存新的项目安排信息*******/
-    public static void createNewScheduleFile() {
+    public static void createNewScheduleFile(ProjectTimeSchedule projectTimeSchedule) {
         // TODO();
     }
 
