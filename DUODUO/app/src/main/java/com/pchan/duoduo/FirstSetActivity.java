@@ -3,11 +3,16 @@ package com.pchan.duoduo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.Date;
 
 public class FirstSetActivity extends AppCompatActivity {
 
@@ -42,18 +47,31 @@ public class FirstSetActivity extends AppCompatActivity {
                 Log.d("deadline", deadlineDate);
                 Log.d("sum of stages", sumOfStage);
 
-                /**切换页面并传递信息**/
-                Intent intent = new Intent(FirstSetActivity.this, StageSetActivity.class);
-
-//                intent.putExtra("project name", projectName);
-//                intent.putExtra("beginning date", beginningDate);
-//                intent.putExtra("expect date", expectDate);
-//                intent.putExtra("deadline", deadlineDate);
-//                intent.putExtra("sum of stages", sumOfStage);
-                /***改为合成字符串数组传递***/
-                String[] firstSetMessage = {projectName, beginningDate, expectDate, deadlineDate, sumOfStage};
-                intent.putExtra("FirstSetMessage", firstSetMessage);
-                startActivity(intent);
+                if (TextUtils.isEmpty(projectName)) {
+                    Toast.makeText(FirstSetActivity.this, "Please input your project name", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(expectDate)) {
+                    Toast.makeText(FirstSetActivity.this, "Please input your expected end time", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(deadlineDate)) {
+                    Toast.makeText(FirstSetActivity.this, "Please input your deadline", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(sumOfStage)) {
+                    Toast.makeText(FirstSetActivity.this, "Please input your number of stages", Toast.LENGTH_SHORT).show();
+                } else if (Integer.parseInt(sumOfStage) >= 4 || Integer.parseInt(sumOfStage) < 0) {
+                    Toast.makeText(FirstSetActivity.this, "Number of stages should be less than 5 and no less than 0", Toast.LENGTH_SHORT).show();
+                } else if (Integer.parseInt(sumOfStage) == 0) {
+                    // TODO()
+                } else {
+                    if (TextUtils.isEmpty(beginningDate)) {
+                        Toast.makeText(FirstSetActivity.this, "Set today as your start time", Toast.LENGTH_SHORT).show();
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                        Date currentDate = new Date();
+                        beginningDate = dateFormat.format(currentDate);
+                    }
+                    /**切换页面并传递信息**/
+                    Intent intent = new Intent(FirstSetActivity.this, StageSetActivity.class);
+                    String[] firstSetMessage = {projectName, beginningDate, expectDate, deadlineDate, sumOfStage};
+                    intent.putExtra("FirstSetMessage", firstSetMessage);
+                    startActivity(intent);
+                }
             }
         });
     }
