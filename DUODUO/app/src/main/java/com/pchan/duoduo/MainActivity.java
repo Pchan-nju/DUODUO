@@ -3,6 +3,7 @@ package com.pchan.duoduo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
@@ -15,10 +16,15 @@ import android.view.animation.ScaleAnimation;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static Context appContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //获取上下文对象
+        appContext = getApplicationContext();
+
 
         /*判断是否存在已有的project
         * 如果是，则进入新建project页面的前导页面
@@ -74,5 +80,9 @@ public class MainActivity extends AppCompatActivity {
         timeScheduleCircleView.animate().alpha(1f).setDuration(500);
 
         constraintLayout.addView(timeScheduleCircleView);
+    }
+
+    public static Context getAppContext(){
+        return appContext;
     }
 }

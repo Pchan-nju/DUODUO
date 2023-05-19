@@ -39,7 +39,6 @@ public class ProjectTimeSchedule {
             this.stageDateStrings[i] += stageDateStrings[i];
         }
     }
-    public ProjectTimeSchedule() {}
 
     public ProjectTimeSchedule(String projectName, String beginningDateString, String expectDateString, String deadlineDateString, int sumOfStageDate, String[] stageDateStrings, int[] sumOfStageTarget, String[][] stageTarget) {
         this.projectName = projectName;
@@ -65,6 +64,9 @@ public class ProjectTimeSchedule {
         this.deadlineDateString = deadlineDateString;
     }
 
+    public ProjectTimeSchedule() {
+    }
+
     public void setProjectName(String name) {
         this.projectName = name;
     }
@@ -76,33 +78,44 @@ public class ProjectTimeSchedule {
     public String getBeginningDateString() {
         return this.beginningDateString;
     }
-
+    public void setBeginningDateString(String beginningDateString){
+        this.beginningDateString = beginningDateString;
+    }
     public String getExpectDateString() {
         return this.expectDateString;
     }
-
+    public void setExpectDateString(String expectDateString){
+        this.expectDateString = expectDateString;
+    }
     public String getDeadlineDateString() {
         return this.deadlineDateString;
     }
-
+    public void setDeadlineDateString(String deadlineDateString){
+        this.deadlineDateString = deadlineDateString;
+    }
     public String[] getStageDateStrings() {
         return this.stageDateStrings;
     }
-
+    public void setStageDateStrings(String[] stageDateStrings){
+        this.stageDateStrings = stageDateStrings;
+    }
     public int[] getSumOfStageTarget() {
         return this.sumOfStageTarget;
     }
-
+    public void setSumOfStageTarget(int[] sumOfStageTarget){
+        this.sumOfStageTarget = sumOfStageTarget;
+    }
     public String[][] getStageTarget() {
         return this.stageTarget;
     }
-
+    public void setStageTarget(String[][] stageTarget){
+        this.stageTarget = stageTarget;
+    }
     protected int getSumOfStageDate() {
         return sumOfStageDate;
     }
-
-    public void setDeadline(String deadlineDateString) {
-        this.deadlineDateString = deadlineDateString;
+    public void setSumOfStageDate(int sumOfStageDate){
+        this.sumOfStageDate = sumOfStageDate;
     }
 
     /*******计算两个日期之间的天数******/
