@@ -11,11 +11,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class ProjectTimeScheduleFileIO {
-
+public class ProjectTimeScheduleFileIO{
     /*******创建新的文件储存新的项目安排信息*******/
-    public static void createNewScheduleFile(ProjectTimeSchedule projectTimeSchedule){
-        Context context = MainActivity.getAppContext();
+    public static void createNewScheduleFile(Context context, ProjectTimeSchedule projectTimeSchedule){
         File file = new File(context.getFilesDir(), projectTimeSchedule.getProjectName());
         try{
             FileWriter writer = new FileWriter(file);
@@ -91,9 +89,8 @@ public class ProjectTimeScheduleFileIO {
     }
 
     /*******从本地文件读取已有项目安排信息********/
-    public static ProjectTimeSchedule getScheduleFromFile(String ProjectName) {
+    public static ProjectTimeSchedule getScheduleFromFile(Context context, String ProjectName) {
         ProjectTimeSchedule projectTimeSchedule = new ProjectTimeSchedule();
-        Context context = MainActivity.getAppContext();
         File file = new File(context.getFilesDir(), ProjectName);
         try {
             FileInputStream fis = new FileInputStream(file);
@@ -152,8 +149,7 @@ public class ProjectTimeScheduleFileIO {
     }
 
     /*******删除本地已有项目安排信息文件********/
-    public static void removeScheduleFile(String ProjectName) {
-        Context context = MainActivity.getAppContext();
+    public static void removeScheduleFile(Context context, String ProjectName) {
         File file = new File(context.getFilesDir(), ProjectName);
         if(file.exists()){
             file.delete();

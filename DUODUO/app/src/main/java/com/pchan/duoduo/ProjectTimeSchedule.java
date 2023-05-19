@@ -10,8 +10,6 @@ import java.util.concurrent.TimeUnit;
 * 记录用户单个project的日期安排信息
 * 日期格式均为 "yyyy-MM-dd"
 * TODO() {
-*   ProjectTimeSchedule();
-*   不同阶段的期望时间;
 *   是否超过了预定的时间：阶段期望时间或者deadline;
 *   到各个期望时间的天数;
 *  }

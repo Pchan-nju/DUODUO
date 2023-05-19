@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -24,6 +25,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class StageSetActivity extends AppCompatActivity {
+    Context context = this;
     private int stageIndex = 1;
     ProjectTimeSchedule projectTimeSchedule;
     String[] stageDateStrings = new String[5];
@@ -109,8 +111,8 @@ public class StageSetActivity extends AppCompatActivity {
                     /********存储用户Project信息********/
                     projectTimeSchedule = new ProjectTimeSchedule(firstSetMessage[0], firstSetMessage[1], firstSetMessage[2], firstSetMessage[3], Integer.parseInt(firstSetMessage[4]), stageDateStrings, sumOfTarget, stageTargetStrings);
 
-                    // TODO(): 无法存储
-                    ProjectTimeScheduleFileIO.createNewScheduleFile(projectTimeSchedule);
+                    // 已解决
+                    ProjectTimeScheduleFileIO.createNewScheduleFile(context, projectTimeSchedule);
                     Intent intent = new Intent(StageSetActivity.this, MainActivity.class);
                     startActivity(intent);
                 } else {

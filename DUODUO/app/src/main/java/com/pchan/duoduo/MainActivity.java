@@ -32,17 +32,19 @@ public class MainActivity extends AppCompatActivity {
         * */
         final SharedPreferences sp = getSharedPreferences("user_project", MODE_PRIVATE);
         int sumOfUserProjects = sp.getInt("sum",0);
-        String[] projectNameStrings = new String[sumOfUserProjects + 2];
         if (sumOfUserProjects == 0) {
             Log.d("Start", "A new project");
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt("sum", 1);
+            editor.apply();
             Intent intent = new Intent(this, StartActivity.class);
             startActivity(intent);
+            // TODO();
         } else {
             Log.d("Start", "already have " + sumOfUserProjects + " projects");
-            for (int i = 1; i <= sumOfUserProjects; i++) {
-                projectNameStrings[i - 1] = sp.getString("Project" + i, "Error");
-                Log.d("Project" + i, projectNameStrings[i - 1]);
-            }
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt("sum", 0);
+            editor.apply();
         }
 
         /*获取屏幕中心坐标*/
@@ -64,13 +66,7 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
         /*****初始化一个ProjectTimeSchedule实例，并应用于timeScheduleCircleView*****/
-        ProjectTimeSchedule projectTimeSchedule = ProjectTimeScheduleFileIO.getScheduleFromFile(projectNameStrings[0]);
-        Log.d("Read Schedule Files", "Success");
-        Log.d("Project name", projectTimeSchedule.getProjectName());
-        Log.d("Project beginning time", projectTimeSchedule.getBeginningDateString());
-        Log.d("Project expected end time", projectTimeSchedule.getExpectDateString());
-        Log.d("Project deadline", projectTimeSchedule.getDeadlineDateString());
-        Log.d("Project sum of stages", "" + projectTimeSchedule.getSumOfStageDate());
+        ProjectTimeSchedule projectTimeSchedule = new ProjectTimeSchedule("sample","2023-01-01", "2023-12-31", 2,"2023-04-01", "2023-07-30");
         TimeScheduleCircleView timeScheduleCircleView = new TimeScheduleCircleView(this);
         timeScheduleCircleView.setProjectTimeSchedule(projectTimeSchedule);
         timeScheduleCircleView.setCenterPosition(centerX, centerY);
