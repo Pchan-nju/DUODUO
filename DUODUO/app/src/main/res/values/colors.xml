@@ -11,4 +11,8 @@
     <color name="blue_tint_state">#FFE6E4F6</color>
     <color name="blue_light_state">#FF8470FF</color>
     <color name="blue_dark_state">#FF483D8B</color>
+    <color name="stage_text">#AF7A67EE</color>
+    <color name="stage_tint_text">#4F7A67EE</color>
+    <color name="stage_add">#5FAB82FF</color>
+    <color name="transparent">#00000000</color>
 </resources>
