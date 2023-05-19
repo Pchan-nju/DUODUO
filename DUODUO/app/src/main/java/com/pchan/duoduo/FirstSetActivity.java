@@ -47,6 +47,7 @@ public class FirstSetActivity extends AppCompatActivity {
                 Log.d("deadline", deadlineDate);
                 Log.d("sum of stages", sumOfStage);
 
+                // TODO():判断projectName是否重复
                 if (TextUtils.isEmpty(projectName)) {
                     Toast.makeText(FirstSetActivity.this, "Please input your project name", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(expectDate)) {
