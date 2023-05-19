@@ -103,8 +103,13 @@ public class StageSetActivity extends AppCompatActivity {
                     int sumOfUserProjects = sp.getInt("sum",0);
                     SharedPreferences.Editor editor = sp.edit();
                     editor.putInt("sum", sumOfUserProjects + 1);
+                    editor.putString("Project" + (sumOfUserProjects + 1), firstSetMessage[0]);
+                    Log.d("Add Project " + firstSetMessage[0], "Success");
+                    editor.apply();
                     /********存储用户Project信息********/
                     projectTimeSchedule = new ProjectTimeSchedule(firstSetMessage[0], firstSetMessage[1], firstSetMessage[2], firstSetMessage[3], Integer.parseInt(firstSetMessage[4]), stageDateStrings, sumOfTarget, stageTargetStrings);
+
+                    // TODO(): 无法存储
                     ProjectTimeScheduleFileIO.createNewScheduleFile(projectTimeSchedule);
                     Intent intent = new Intent(StageSetActivity.this, MainActivity.class);
                     startActivity(intent);
