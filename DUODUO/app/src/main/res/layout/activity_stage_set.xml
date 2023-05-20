@@ -13,6 +13,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/StageTargetLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -68,6 +69,7 @@
 
 <!--        editTarget 一条target的框架-->
             <LinearLayout
+                android:id="@+id/SingleTargetLayout"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginStart="16dp"
@@ -90,7 +92,7 @@
                 <EditText
                     android:id="@+id/editTextText"
                     android:layout_width="290dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_marginStart="10dp"
                     android:background="@drawable/background_edit_target"
                     android:ems="10"
@@ -115,53 +117,53 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="8dp"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_marginEnd="8dp"-->
+<!--                android:orientation="horizontal">-->
 
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/background_number"
-                    android:gravity="center"
-                    android:text="02"
-                    android:textColor="@color/stage_text"
-                    android:textSize="22dp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:id="@+id/textView10"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginStart="8dp"-->
+<!--                    android:background="@drawable/background_number"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="02"-->
+<!--                    android:textColor="@color/stage_text"-->
+<!--                    android:textSize="22dp"-->
+<!--                    android:textStyle="bold" />-->
 
-                <EditText
-                    android:id="@+id/editTextText1"
-                    android:layout_width="290dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:background="@drawable/background_edit_target"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:paddingStart="8dp"
-                    android:paddingTop="16dp"
-                    android:paddingEnd="8dp"
-                    android:paddingBottom="16dp"
-                    android:text=""
-                    android:textColor="@color/blue_tint_state"
-                    android:textSize="20dp" />
+<!--                <EditText-->
+<!--                    android:id="@+id/editTextText1"-->
+<!--                    android:layout_width="290dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:background="@drawable/background_edit_target"-->
+<!--                    android:ems="10"-->
+<!--                    android:inputType="text"-->
+<!--                    android:paddingStart="8dp"-->
+<!--                    android:paddingTop="16dp"-->
+<!--                    android:paddingEnd="8dp"-->
+<!--                    android:paddingBottom="16dp"-->
+<!--                    android:text=""-->
+<!--                    android:textColor="@color/blue_tint_state"-->
+<!--                    android:textSize="20dp" />-->
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button7"
-                    android:layout_width="20dp"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:text="-"
-                    android:textColor="@color/blue_light_state"
-                    android:textSize="50dp"
-                    android:layout_marginStart="6dp"/>
+<!--                <androidx.appcompat.widget.AppCompatButton-->
+<!--                    android:id="@+id/button7"-->
+<!--                    android:layout_width="20dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@color/transparent"-->
+<!--                    android:text="-"-->
+<!--                    android:textColor="@color/blue_light_state"-->
+<!--                    android:textSize="50dp"-->
+<!--                    android:layout_marginStart="6dp"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/addButton"
@@ -172,7 +174,6 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="48dp"
                 android:background="@drawable/background_add_target"
-                android:onClick="btnNext"
                 android:padding="4dp"
                 android:paddingStart="16dp"
                 android:text="Add Target"
