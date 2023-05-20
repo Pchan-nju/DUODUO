@@ -28,7 +28,7 @@ public class StageSetActivity extends AppCompatActivity {
     Context context = this;
     private int stageIndex = 1;
     ProjectTimeSchedule projectTimeSchedule;
-    String[] stageDateStrings = new String[5];
+    String[] stageDateStrings = {"2023-01-02", "2023-02-02", "2023-03-02", "2023-04-02", "2023-05-02"};
     int[] sumOfTarget = new int[10];
     String[][] stageTargetStrings = new String[10][10];
     ArrayList<EditText> editTextArrayList = new ArrayList<>();
@@ -111,7 +111,7 @@ public class StageSetActivity extends AppCompatActivity {
                     /********存储用户Project信息********/
                     projectTimeSchedule = new ProjectTimeSchedule(firstSetMessage[0], firstSetMessage[1], firstSetMessage[2], firstSetMessage[3], Integer.parseInt(firstSetMessage[4]), stageDateStrings, sumOfTarget, stageTargetStrings);
 
-                    // 已解决
+                    // TODO(): 无法存储
                     ProjectTimeScheduleFileIO.createNewScheduleFile(context, projectTimeSchedule);
                     Intent intent = new Intent(StageSetActivity.this, MainActivity.class);
                     startActivity(intent);
