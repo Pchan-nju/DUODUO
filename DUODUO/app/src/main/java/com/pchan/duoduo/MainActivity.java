@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
         /*****初始化一个ProjectTimeSchedule实例，并应用于timeScheduleCircleView*****/
-        ProjectTimeSchedule projectTimeSchedule = ProjectTimeScheduleFileIO.getScheduleFromFile(projectNameStrings[0]);
+        ProjectTimeSchedule projectTimeSchedule = ProjectTimeScheduleFileIO.getScheduleFromFile(this, projectNameStrings[0]);
         Log.d("Read Schedule Files", "Success");
         Log.d("Project name", projectTimeSchedule.getProjectName());
         Log.d("Project beginning time", projectTimeSchedule.getBeginningDateString());
