@@ -34,11 +34,14 @@ public class ProjectTimeScheduleFileIO{
             writer.append(String.valueOf(sumOfStageDate));
             writer.append("\n");                                 //存sumOfStageDate
             //存stageDateStrings
-            for(String str : stageDateStrings){
-                writer.append(str);
-                writer.append(",");
+            for(int i = 0; i < stageDateStrings.length; i++){
+                writer.append(stageDateStrings[i]);
+                if(i != stageDateStrings.length - 1){
+                    writer.append(",");
+                }else {
+                    writer.append("\n");
+                }
             }
-            writer.append("\n");
             //存sumOfStageTarget
             StringBuilder sb = new StringBuilder();
             for(int i = 0; i < sumOfStageTarget.length; i++){
@@ -60,9 +63,7 @@ public class ProjectTimeScheduleFileIO{
                         sb.append(",");
                     }
                 }
-                if(i != s_lines - 1){
-                    Sb.append("\n");
-                }
+                Sb.append("\n");
             }
             writer.append(Sb.toString());
             //存stageTargetFinish
@@ -127,15 +128,15 @@ public class ProjectTimeScheduleFileIO{
             }
             projectTimeSchedule.setStageTarget(stageTarget);
             String[] lines_and_cols_2 = linesArray[8 + l].split(",");
-            int l2 = Integer.parseInt(lines_and_cols[0]);
-            int c2 = Integer.parseInt(lines_and_cols[1]);
+            int l2 = Integer.parseInt(lines_and_cols_2[0]);
+            int c2 = Integer.parseInt(lines_and_cols_2[1]);
             boolean[][] stageTargetFinish = new boolean[l2][c2];
             for(int i = 9 + l; i < 9 + l + l2; i++){
                 for(int j = 0; j < c2; j++){
                     if(linesArray[i].charAt(j) == '0'){
-                        stageTargetFinish[i][j] = false;
+                        stageTargetFinish[i - 9 - l][j] = false;
                     }else {
-                        stageTargetFinish[i][j] = true;
+                        stageTargetFinish[i - 9 - l][j] = true;
                     }
                 }
             }
