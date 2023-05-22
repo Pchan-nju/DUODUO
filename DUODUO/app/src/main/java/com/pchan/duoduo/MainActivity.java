@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
@@ -26,10 +27,25 @@ public class MainActivity extends AppCompatActivity {
 
     private static Context appContext;
     public ProjectTimeSchedule projectTimeSchedule;
+    public TextView projectNameTextView;
+    public String[] projectNameStrings;
+    int sumOfUserProjects;
+    public ConstraintLayout constraintLayout;
+    public TimeScheduleCircleView timeScheduleCircleView;
+    public MaterialButton originAddProjectButton;
+    public ScaleAnimation scaleAnimation;
+    public LinearLayout projectButtonsLinearLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        projectNameTextView = findViewById(R.id.textView7);
+        final SharedPreferences sp = getSharedPreferences("user_project", MODE_PRIVATE);
+        sumOfUserProjects = sp.getInt("sum",0);
+        projectNameStrings = new String[sumOfUserProjects + 2];
+
+        // 获取底下一排按钮的LinearLayout
+        projectButtonsLinearLayout = findViewById(R.id.projectButtonsLinearLayout);
 
         //获取上下文对象
         appContext = getApplicationContext();
@@ -39,9 +55,6 @@ public class MainActivity extends AppCompatActivity {
         * 如果是，则进入新建project页面的前导页面
         * 如果不是，则显示已有的project进度
         * */
-        final SharedPreferences sp = getSharedPreferences("user_project", MODE_PRIVATE);
-        int sumOfUserProjects = sp.getInt("sum",0);
-        String[] projectNameStrings = new String[sumOfUserProjects + 2];
         for (int i = 0; i < sumOfUserProjects + 2; i++) {
             projectNameStrings[i] = "";
         }
@@ -63,17 +76,7 @@ public class MainActivity extends AppCompatActivity {
         int centerX = displayMetrics.widthPixels / 2;
         int centerY = displayMetrics.heightPixels / 2;
 
-        /*在屏幕中央绘制圆形*/
-//        CircleView circleView = new CircleView(this);
-//        circleView.setCircle(0xFFFFB6C1, Paint.Style.FILL, 400.0f, centerX,centerY);    // 设置圆形参数
-        ConstraintLayout constraintLayout = (ConstraintLayout) findViewById(R.id.activity_main);
-//        constraintLayout.addView(circleView);
-//        circleView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Log.d("circleView", "HaHaHa");
-//            }
-//        });
+        constraintLayout = (ConstraintLayout) findViewById(R.id.activity_main);
 
         /*****初始化一个ProjectTimeSchedule实例，并应用于timeScheduleCircleView*****/
         projectTimeSchedule = ProjectTimeScheduleFileIO.getScheduleFromFile(this, projectNameStrings[0]);
@@ -83,32 +86,77 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Project expected end time", projectTimeSchedule.getExpectDateString());
         Log.d("Project deadline", projectTimeSchedule.getDeadlineDateString());
         Log.d("Project sum of stages", "" + projectTimeSchedule.getSumOfStageDate());
-        TimeScheduleCircleView timeScheduleCircleView = new TimeScheduleCircleView(this);
+        timeScheduleCircleView = new TimeScheduleCircleView(this);
         timeScheduleCircleView.setProjectTimeSchedule(projectTimeSchedule);
         timeScheduleCircleView.setCenterPosition(centerX, centerY);
 
-        /********/
-        TextView projectNameTextView = findViewById(R.id.textView7);
         projectNameTextView.setText(projectTimeSchedule.getProjectName());
 
         /*********设置动画*********/
         timeScheduleCircleView.setAlpha(0f);
-        ScaleAnimation scaleAnimation = new ScaleAnimation(0f, 1f, 0f, 1f,
+        scaleAnimation = new ScaleAnimation(0f, 1f, 0f, 1f,
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         scaleAnimation.setDuration(500);
         timeScheduleCircleView.startAnimation(scaleAnimation);
         timeScheduleCircleView.animate().alpha(1f).setDuration(500);
 
+        // 应用timeScheduleCircleView
         constraintLayout.addView(timeScheduleCircleView);
 
-        /***增加project***/
+        // 增加project
         LayoutInflater inflater = getLayoutInflater();
         View rootView = inflater.inflate(R.layout.activity_start, null);
-        MaterialButton originAddProjectButton = (MaterialButton) rootView.findViewById(R.id.startButton);
+        originAddProjectButton = (MaterialButton) rootView.findViewById(R.id.startButton);
+
+        // 默认打开界面为 project1
+        // 记录上一个打开的Project, 初始值为1
+        final int[] lastProjectIndex = {1};
+        // 设置最大 Project 数量
+        final int MAX_PROJECT_NUM = 4 + 1;
+        // 切换project1
+        AppCompatButton[] projectButtons = new AppCompatButton[MAX_PROJECT_NUM];
+        projectButtons[1] = (AppCompatButton) findViewById(R.id.firstProjectButton);
+        projectButtons[2] = (AppCompatButton) findViewById(R.id.button1);
+        projectButtons[3] = (AppCompatButton) findViewById(R.id.button2);
+        projectButtons[4] = (AppCompatButton) findViewById(R.id.button3);
+        projectButtonsLinearLayout.removeView(projectButtons[1]);
+        // 获取 Edit 按钮
+        AppCompatButton editButton = (AppCompatButton) findViewById(R.id.button);
+
+        for (int i = 1; i < MAX_PROJECT_NUM; i++) {
+            int finalI = i;
+            projectButtons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    projectButtonsLinearLayout.removeView(editButton);
+                    projectButtonsLinearLayout.addView(projectButtons[lastProjectIndex[0]], lastProjectIndex[0] - 1);
+                    projectButtonsLinearLayout.removeView(projectButtons[finalI]);
+                    projectButtonsLinearLayout.addView(editButton, finalI - 1);
+                    lastProjectIndex[0] = finalI;
+                    Log.d("Press Project", "" + finalI);
+                    changeProject(finalI);
+                }
+            });
+        }
+    }
+
+    public static Context getAppContext(){
+        return appContext;
+    }
+
+    public MaterialButton newAddProjectButton() {
+        ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(700,700);
+        // 设置水平居中和垂直居中的约束条件
+        layoutParams.leftToLeft = ConstraintLayout.LayoutParams.PARENT_ID;
+        layoutParams.rightToRight = ConstraintLayout.LayoutParams.PARENT_ID;
+        layoutParams.topToTop = ConstraintLayout.LayoutParams.PARENT_ID;
+        layoutParams.bottomToBottom = ConstraintLayout.LayoutParams.PARENT_ID;
+
+        //复制一个新建Project按钮
         MaterialButton addProjectButton = new MaterialButton(this);
         addProjectButton.setBackground(originAddProjectButton.getBackground());
         addProjectButton.setText(originAddProjectButton.getText());
-        addProjectButton.setLayoutParams(originAddProjectButton.getLayoutParams());
+        addProjectButton.setLayoutParams(layoutParams);
         addProjectButton.setTextSize(40);
         addProjectButton.setTypeface(Typeface.DEFAULT_BOLD);
         addProjectButton.setStrokeColor(originAddProjectButton.getStrokeColor());
@@ -119,106 +167,50 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(addProjectIntent);
             }
         });
-
-        /***切换project1***/
-        /***TODO:切换显示有问题！***/
-        AppCompatButton secondProjectButton = (AppCompatButton) findViewById(R.id.button1);
-        secondProjectButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                constraintLayout.removeView(addProjectButton);
-                projectNameTextView.setText(projectNameStrings[1]);
-                if (sumOfUserProjects < 2) {
-                    constraintLayout.removeView(timeScheduleCircleView);
-                    constraintLayout.addView(addProjectButton);
-                    return;
-                }
-                try {
-                    ProjectTimeSchedule newProjectTimeSchedule = ProjectTimeScheduleFileIO.getScheduleFromFile(MainActivity.this, projectNameStrings[1]);
-                    timeScheduleCircleView.setProjectTimeSchedule(newProjectTimeSchedule);
-                    constraintLayout.removeView(timeScheduleCircleView);
-
-                    /****重新增加动画****/
-                    timeScheduleCircleView.setAlpha(0f);
-                    timeScheduleCircleView.startAnimation(scaleAnimation);
-                    timeScheduleCircleView.animate().alpha(1f).setDuration(500);
-
-                    constraintLayout.addView(timeScheduleCircleView);
-                    projectTimeSchedule = newProjectTimeSchedule;
-                    Log.d("Switch Project", "Success");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Log.d("Switch Project", "ERROR");
-                }
-            }
-        });
-
-        /***切换project2***/
-        AppCompatButton thirdProjectButton = (AppCompatButton) findViewById(R.id.button2);
-        secondProjectButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                constraintLayout.removeView(addProjectButton);
-                if (sumOfUserProjects < 3) {
-                    constraintLayout.removeView(timeScheduleCircleView);
-                    constraintLayout.addView(addProjectButton);
-                    return;
-                }
-                projectNameTextView.setText(projectNameStrings[2]);
-                try {
-                    ProjectTimeSchedule newProjectTimeSchedule = ProjectTimeScheduleFileIO.getScheduleFromFile(MainActivity.this, projectNameStrings[1]);
-                    timeScheduleCircleView.setProjectTimeSchedule(newProjectTimeSchedule);
-                    constraintLayout.removeView(timeScheduleCircleView);
-
-                    /****重新增加动画****/
-                    timeScheduleCircleView.setAlpha(0f);
-                    timeScheduleCircleView.startAnimation(scaleAnimation);
-                    timeScheduleCircleView.animate().alpha(1f).setDuration(500);
-
-                    constraintLayout.addView(timeScheduleCircleView);
-                    projectTimeSchedule = newProjectTimeSchedule;
-                    Log.d("Switch Project", "Success");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Log.d("Switch Project", "ERROR");
-                }
-            }
-        });
-
-        /***切换project3***/
-        AppCompatButton fourthProjectButton = (AppCompatButton) findViewById(R.id.button3);
-        secondProjectButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                constraintLayout.removeView(addProjectButton);
-                if (sumOfUserProjects < 4) {
-                    constraintLayout.removeView(timeScheduleCircleView);
-                    constraintLayout.addView(addProjectButton);
-                    return;
-                }
-                projectNameTextView.setText(projectNameStrings[3]);
-                try {
-                    ProjectTimeSchedule newProjectTimeSchedule = ProjectTimeScheduleFileIO.getScheduleFromFile(MainActivity.this, projectNameStrings[1]);
-                    timeScheduleCircleView.setProjectTimeSchedule(newProjectTimeSchedule);
-                    constraintLayout.removeView(timeScheduleCircleView);
-
-                    /****重新增加动画****/
-                    timeScheduleCircleView.setAlpha(0f);
-                    timeScheduleCircleView.startAnimation(scaleAnimation);
-                    timeScheduleCircleView.animate().alpha(1f).setDuration(500);
-
-                    constraintLayout.addView(timeScheduleCircleView);
-                    projectTimeSchedule = newProjectTimeSchedule;
-                    Log.d("Switch Project", "Success");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Log.d("Switch Project", "ERROR");
-                }
-            }
-        });
+        return addProjectButton;
     }
 
-    public static Context getAppContext(){
-        return appContext;
+    public void changeProject(int index) {
+        // 去除页面已有的addProjectButton或TimeScheduleCircleView
+        for (int i = 0; i < constraintLayout.getChildCount(); i++) {
+            View child = constraintLayout.getChildAt(i);
+            if (child instanceof MaterialButton || child instanceof TimeScheduleCircleView) {
+                try {
+                    constraintLayout.removeView(child);
+                } catch (IllegalArgumentException e) {
+                    e.printStackTrace();
+                    Log.d("Error", "remove view failed " + index);
+                }
+
+            }
+        }
+        // 判断这个Project是否存在
+        if (sumOfUserProjects >= index) {
+            // Project存在
+            try {
+                projectNameTextView.setText(projectNameStrings[index - 1]);
+                ProjectTimeSchedule newProjectTimeSchedule = ProjectTimeScheduleFileIO.getScheduleFromFile(MainActivity.this, projectNameStrings[index - 1]);
+                timeScheduleCircleView.setProjectTimeSchedule(newProjectTimeSchedule);
+                constraintLayout.removeView(timeScheduleCircleView);
+
+                /****重新增加动画****/
+                timeScheduleCircleView.setAlpha(0f);
+                timeScheduleCircleView.startAnimation(scaleAnimation);
+                timeScheduleCircleView.animate().alpha(1f).setDuration(500);
+
+                constraintLayout.addView(timeScheduleCircleView);
+                projectTimeSchedule = newProjectTimeSchedule;
+                Log.d("Switch Project", "Success id " + index);
+            } catch (Exception e) {
+                e.printStackTrace();
+                Log.d("Switch Project", "ERROR id " + index);
+            }
+        } else {
+            // Project不存在
+            // 增添新建Project按钮
+            projectNameTextView.setText("A New Project!");
+            MaterialButton materialButton = newAddProjectButton();
+            constraintLayout.addView(materialButton);
+        }
     }
 }

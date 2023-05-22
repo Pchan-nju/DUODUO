@@ -28,11 +28,12 @@ public class StageSetActivity extends AppCompatActivity {
     Context context = this;
     private int stageIndex = 1;
     ProjectTimeSchedule projectTimeSchedule;
-    String[] stageDateStrings = {"2023-01-02", "2023-02-02", "2023-03-02", "2023-04-02", "2023-05-02"};
+    String[] stageDateStrings = new String[10];
     int[] sumOfTarget = new int[10];
     String[][] stageTargetStrings = new String[10][10];
     ArrayList<EditText> editTextArrayList = new ArrayList<>();
     int sumOfEditText = 0;
+    EditText stageDueEditText;
 
 
     @Override
@@ -42,7 +43,8 @@ public class StageSetActivity extends AppCompatActivity {
 
         LinearLayout linearLayout = findViewById(R.id.StageTargetLinearLayout);// 获取当前LinearLayout页面布局
 
-        /**editText, index, deleteButton 的合体*
+        /*
+         * editText, index, deleteButton 的合体*
          * 将targetLinearLayout加入linearLayout*/
         LinearLayout targetLinearLayout = findViewById(R.id.SingleTargetLayout);
         linearLayout.removeView(targetLinearLayout);
@@ -75,6 +77,9 @@ public class StageSetActivity extends AppCompatActivity {
         TextView stageTitle = findViewById(R.id.textView12);
         stageTitle.setText("" + stageIndex);
 
+        // 获取stageDueEditText
+        stageDueEditText = findViewById(R.id.stageDueTimeEditTextView);
+
         /***Next按钮功能实现***/
         Button nextButton = findViewById(R.id.nextButton1); // 设置为NEXT按钮
         if (sumOfStage == stageIndex) {
@@ -83,10 +88,14 @@ public class StageSetActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // 记录该阶段结束日期
+                // TODO:判断输入合法性
+                stageDateStrings[stageIndex - 1] = stageDueEditText.getText().toString();
+                stageDueEditText.setText("");
                 // 记录当前页面输入的Target内容
                 sumOfTarget[stageIndex - 1] = sumOfEditText;
                 for (int i = 1 ; i <= sumOfEditText; i++){
-                    View child = linearLayout.getChildAt(1);
+                    View child = linearLayout.getChildAt(1 + 3);
                     if (child instanceof LinearLayout) {
                         AppCompatEditText editText = (AppCompatEditText) ((LinearLayout) child).getChildAt(1);
                         if (editText.getText()!= null && !TextUtils.isEmpty(editText.getText().toString())) {
@@ -111,7 +120,6 @@ public class StageSetActivity extends AppCompatActivity {
                     /********存储用户Project信息********/
                     projectTimeSchedule = new ProjectTimeSchedule(firstSetMessage[0], firstSetMessage[1], firstSetMessage[2], firstSetMessage[3], Integer.parseInt(firstSetMessage[4]), stageDateStrings, sumOfTarget, stageTargetStrings);
 
-                    // TODO(): 无法存储
                     ProjectTimeScheduleFileIO.createNewScheduleFile(context, projectTimeSchedule);
                     Intent intent = new Intent(StageSetActivity.this, MainActivity.class);
                     startActivity(intent);
@@ -188,7 +196,7 @@ public class StageSetActivity extends AppCompatActivity {
                                     View targetChild = linearLayout.getChildAt(i);
                                     if (targetChild instanceof LinearLayout) {
                                         TextView numberTextView = (TextView) ((LinearLayout) targetChild).getChildAt(0);
-                                        numberTextView.setText("0" + i);
+                                        numberTextView.setText("0" + (i - 3));
                                     }
                                 }
                             }
@@ -196,7 +204,7 @@ public class StageSetActivity extends AppCompatActivity {
                         newLinearLayout.addView(newButton);
                     }
                 }
-                linearLayout.addView(newLinearLayout, linearLayout.getChildCount() - 1);
+                linearLayout.addView(newLinearLayout, linearLayout.getChildCount() - 2);
             }
         });
     }

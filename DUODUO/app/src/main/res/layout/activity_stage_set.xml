@@ -79,7 +79,7 @@
                 android:textColor="@color/blue_dark_state"/>
 
             <EditText
-                android:id="@+id/startTimeEditTextView"
+                android:id="@+id/stageDueTimeEditTextView"
                 style="@android:style/Widget.DatePicker"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
