@@ -63,7 +63,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/button1"
+                android:id="@+id/startButton"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="300dp"
                 android:layout_height="300dp"

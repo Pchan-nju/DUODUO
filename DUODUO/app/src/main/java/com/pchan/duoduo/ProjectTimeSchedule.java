@@ -121,11 +121,11 @@ public class ProjectTimeSchedule {
         try {
             Date date1 = ft.parse(dateString1);
             Date date2 = ft.parse(dateString2);
-            Log.d("date1", date1.toString());
-            Log.d("date2", date2.toString());
+//            Log.d("date1", date1.toString());
+//            Log.d("date2", date2.toString());
             long diff = date2.getTime() - date1.getTime();
             long daysBetween = diff / 86400000;
-            Log.d(dateString1 + " to " + dateString2, "" + daysBetween);
+//            Log.d(dateString1 + " to " + dateString2, "" + daysBetween);
             return (int)daysBetween;
         } catch (Exception e) {
             Log.d("daysBetween", "ERROR");
@@ -143,23 +143,39 @@ public class ProjectTimeSchedule {
         return (float) daysBetween(beginningDateString, currentDateString) / daysBetween(beginningDateString, deadlineDateString);
     }
 
+    public float ratioOfExpectedDay() {
+        return (float) daysBetween(beginningDateString, expectDateString) / daysBetween(beginningDateString, deadlineDateString);
+    }
+
     /**
      * 计算各阶段时间占总时长的比例
      * @return ratios of every StageDays in the whole schedule
      */
     public float[] ratioOfStageDays() {
         float[] ratios = new float[sumOfStageDate];
-        Log.d("sum of stage date", "" + sumOfStageDate);
+//        Log.d("sum of stage date", "" + sumOfStageDate);
         for (int i = 0; i < sumOfStageDate; i++) {
             float x = (float) daysBetween(beginningDateString, stageDateStrings[i]);
             float y = (float) daysBetween(beginningDateString, deadlineDateString);
-            Log.d("ratio of stage[" + i + "]=" + stageDateStrings[i], x + " / " + y + " = " + (x / y));
+//            Log.d("ratio of stage[" + i + "]=" + stageDateStrings[i], x + " / " + y + " = " + (x / y));
             ratios[i] = x / y;
 //            ratios[i] = (float) daysBetween(beginningDateString, stageDateStrings[i]) / daysBetween(beginningDateString, deadlineDateString);
-            Log.d("ratio id " + i, "" + ratios[i]);
+//            Log.d("ratio id " + i, "" + ratios[i]);
         }
-        Log.d("ratios", ratios.toString());
+//        Log.d("ratios", ratios.toString());
         return ratios;
+    }
+
+    public float[] ratioOfTargetStageFromBeginningToExpected() {
+        int tot = 0;
+        for (int i = 0; i < sumOfStageDate; i++) {
+            tot += sumOfStageTarget[i];
+        }
+        float[] ans = new float[sumOfStageDate];
+        for (int i = 0; i < sumOfStageDate; i++) {
+            ans[i] = (float) sumOfStageTarget[i] / tot;
+        }
+        return ans;
     }
 
     /***判断是否已经逾期***/

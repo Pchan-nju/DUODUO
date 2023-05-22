@@ -22,11 +22,18 @@ public class FirstSetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_set);
+
         EditText projectNameEditText = findViewById(R.id.projectNameEditTextView);
         EditText startTimeEditText = findViewById(R.id.startTimeEditTextView);
         EditText expectTimeEditText = findViewById(R.id.expectTimeEditTextView);
         EditText deadlineEditText = findViewById(R.id.deadlineEditTextView);
         EditText stageNumberEditText = findViewById(R.id.stageNumberEditTextView);
+
+        /***默认开始日期为当前日期***/
+        SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
+        Date currentDate = new Date();
+        String currentDateString = ft.format(currentDate);
+        startTimeEditText.setText(currentDateString);
 
         Button nextButton = findViewById(R.id.nextButton);
         nextButton.setOnClickListener(new View.OnClickListener() {
