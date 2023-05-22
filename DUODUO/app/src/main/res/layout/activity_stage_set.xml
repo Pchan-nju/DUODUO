@@ -20,13 +20,13 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp">
+                android:layout_height="180dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="50dp"
+                    android:layout_marginBottom="30dp"
                     android:background="@drawable/background_top_login"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +67,46 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--        editTarget 一条target的框架-->
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stage's due time"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="32dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_dark_state"/>
+
+            <EditText
+                android:id="@+id/startTimeEditTextView"
+                style="@android:style/Widget.DatePicker"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/background_edit_text"
+                android:ems="10"
+                android:hint="e.g 2023-05-20"
+                android:inputType="date"
+                android:padding="8dp"
+                android:textColor="@color/blue_dark_state"
+                android:textSize="16sp" />
+
+            <!--        editTarget 一条target的框架-->
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Divide your stage into targets"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="32dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_dark_state"/>
+
             <LinearLayout
                 android:id="@+id/SingleTargetLayout"
                 android:layout_width="match_parent"
@@ -117,53 +156,6 @@
 
             </LinearLayout>
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:layout_marginStart="16dp"-->
-<!--                android:layout_marginTop="12dp"-->
-<!--                android:layout_marginEnd="8dp"-->
-<!--                android:orientation="horizontal">-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/textView10"-->
-<!--                    android:layout_width="40dp"-->
-<!--                    android:layout_height="40dp"-->
-<!--                    android:layout_marginStart="8dp"-->
-<!--                    android:background="@drawable/background_number"-->
-<!--                    android:gravity="center"-->
-<!--                    android:text="02"-->
-<!--                    android:textColor="@color/stage_text"-->
-<!--                    android:textSize="22dp"-->
-<!--                    android:textStyle="bold" />-->
-
-<!--                <EditText-->
-<!--                    android:id="@+id/editTextText1"-->
-<!--                    android:layout_width="290dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="10dp"-->
-<!--                    android:background="@drawable/background_edit_target"-->
-<!--                    android:ems="10"-->
-<!--                    android:inputType="text"-->
-<!--                    android:paddingStart="8dp"-->
-<!--                    android:paddingTop="16dp"-->
-<!--                    android:paddingEnd="8dp"-->
-<!--                    android:paddingBottom="16dp"-->
-<!--                    android:text=""-->
-<!--                    android:textColor="@color/blue_tint_state"-->
-<!--                    android:textSize="20dp" />-->
-
-<!--                <androidx.appcompat.widget.AppCompatButton-->
-<!--                    android:id="@+id/button7"-->
-<!--                    android:layout_width="20dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:background="@color/transparent"-->
-<!--                    android:text="-"-->
-<!--                    android:textColor="@color/blue_light_state"-->
-<!--                    android:textSize="50dp"-->
-<!--                    android:layout_marginStart="6dp"/>-->
-
-<!--            </LinearLayout>-->
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/addButton"
@@ -182,72 +174,71 @@
                 android:textStyle="bold" />
 
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="80dp"
+                android:layout_height="150dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/nextButton0"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/background_quit_button"
+                    android:onClick="btnNext"
+                    android:padding="4dp"
+                    android:paddingStart="16dp"
+                    android:text="BACK"
+                    android:textColor="@color/blue_light_state"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/nextButton1"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/background_next_button"
+                    android:onClick="btnNext"
+                    android:padding="4dp"
+                    android:paddingStart="16dp"
+                    android:text="NEXT"
+                    android:textColor="@color/blue_tint_state"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cancelButton"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="18dp"
+                    android:background="@drawable/background_quit_button"
+                    android:onClick="cancel"
+                    android:padding="4dp"
+                    android:paddingStart="16dp"
+                    android:text="CANCEL"
+                    android:textColor="@color/blue_light_state"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         </LinearLayout>
     </ScrollView>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nextButton0"
-            style="@android:style/Widget.Button"
-            android:layout_width="150dp"
-            android:layout_height="70dp"
-            android:background="@drawable/background_quit_button"
-            android:onClick="btnNext"
-            android:padding="4dp"
-            android:paddingStart="16dp"
-            android:text="BACK"
-            android:textColor="@color/blue_light_state"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nextButton1"
-            style="@android:style/Widget.Button"
-            android:layout_width="150dp"
-            android:layout_height="70dp"
-            android:background="@drawable/background_next_button"
-            android:onClick="btnNext"
-            android:padding="4dp"
-            android:paddingStart="16dp"
-            android:text="NEXT"
-            android:textColor="@color/blue_tint_state"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/cancelButton"
-            style="@android:style/Widget.Button"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:background="@drawable/background_quit_button"
-            android:onClick="cancel"
-            android:padding="4dp"
-            android:paddingStart="16dp"
-            android:text="CANCEL"
-            android:textColor="@color/blue_light_state"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="18dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
