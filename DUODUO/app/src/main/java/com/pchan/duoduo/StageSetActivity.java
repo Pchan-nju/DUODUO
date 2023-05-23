@@ -89,7 +89,10 @@ public class StageSetActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 记录该阶段结束日期
-                // TODO:判断输入合法性
+                if (TextUtils.isEmpty(stageDueEditText.getText().toString()) || !FirstSetActivity.isDateFormatValid(stageDueEditText.getText().toString())) {
+                    Toast.makeText(StageSetActivity.this, "Please input date correctly", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 stageDateStrings[stageIndex - 1] = stageDueEditText.getText().toString();
                 stageDueEditText.setText("");
                 // 记录当前页面输入的Target内容
@@ -126,6 +129,8 @@ public class StageSetActivity extends AppCompatActivity {
                 } else {
                     if (sumOfStage == stageIndex) {
                         nextButton.setText("Finish");
+                        // 默认最后截止时间为 expected end time
+                        stageDueEditText.setText(firstSetMessage[2]);
                     }
                     stageTitle.setText("" + stageIndex);
                 }

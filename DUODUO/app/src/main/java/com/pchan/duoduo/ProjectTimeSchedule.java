@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 * 日期格式均为 "yyyy-MM-dd"
 * TODO() {
 *   是否超过了预定的时间：阶段期望时间或者deadline;
-*   到各个期望时间的天数;
 *  }
 * */
 public class ProjectTimeSchedule {
@@ -199,5 +198,9 @@ public class ProjectTimeSchedule {
 
     public void setStageTargetFinish(boolean[][] stageTargetFinish) {
         this.stageTargetFinish = stageTargetFinish;
+    }
+
+    public boolean ifExpectedDateOverDue() {
+        return (daysBetween(currentDateString, expectDateString) < 0);
     }
 }

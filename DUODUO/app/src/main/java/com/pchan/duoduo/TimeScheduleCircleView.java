@@ -33,24 +33,46 @@ public class TimeScheduleCircleView extends View {
         final float radius = 400.0f;
 
         /**绘制不同大小的圆**/
-        /**先画deadline的圆**/
-        paint.setColor(0x3FE6E4F6);
-        paint.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(centerPositionX, centerPositionY, radius, paint);
+        if (projectTimeSchedule.ifExpectedDateOverDue()) {
+            /**先画expectedDate的圆**/
+            paint.setColor(0x3FE6E4F6);
+            paint.setStyle(Paint.Style.FILL);
+            canvas.drawCircle(centerPositionX, centerPositionY, radius, paint);
 
-        /**画currentDate的圆**/
-        paint.setColor(0x9FE6E6FA);
-        paint.setStrokeWidth(5);
-        paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        canvas.drawCircle(centerPositionX, centerPositionY, radius * projectTimeSchedule.ratioOfPassedDays(), paint);
+            /**画currentDate的圆**/
+            paint.setColor(0x9FE6E6FA);
+            paint.setStrokeWidth(5);
+            paint.setStyle(Paint.Style.FILL_AND_STROKE);
+            canvas.drawCircle(centerPositionX, centerPositionY, radius * projectTimeSchedule.ratioOfPassedDays() / projectTimeSchedule.ratioOfExpectedDay(), paint);
 
-        /**画各个阶段的圆**/
-        float[] ratiosOfStages = projectTimeSchedule.ratioOfTargetStageFromBeginningToExpected();
-        paint.setStyle(Paint.Style.STROKE);
-        for (int i = projectTimeSchedule.getSumOfStageDate() - 1; i >= 0 ; i--) {
+            /**画各个阶段的圆**/
+            float[] ratiosOfStages = projectTimeSchedule.ratioOfTargetStageFromBeginningToExpected();
+            paint.setStyle(Paint.Style.STROKE);
+            for (int i = projectTimeSchedule.getSumOfStageDate() - 1; i >= 0; i--) {
 //            Log.d("LoadStageCircle", "success id " + ratiosOfStages[i]);
-            paint.setColor(0x3F483D8B);
-            canvas.drawCircle(centerPositionX, centerPositionY, radius * ratiosOfStages[i] * projectTimeSchedule.ratioOfExpectedDay(), paint);
+                paint.setColor(0x3F483D8B);
+                canvas.drawCircle(centerPositionX, centerPositionY, radius * ratiosOfStages[i] * projectTimeSchedule.ratioOfExpectedDay(), paint);
+            }
+        } else {
+            /**先画deadline的圆**/
+            paint.setColor(0x3FDC143C);
+            paint.setStyle(Paint.Style.FILL);
+            canvas.drawCircle(centerPositionX, centerPositionY, radius, paint);
+
+            /**画currentDate的圆**/
+            paint.setColor(0x9FE6E6FA);
+            paint.setStrokeWidth(5);
+            paint.setStyle(Paint.Style.FILL_AND_STROKE);
+            canvas.drawCircle(centerPositionX, centerPositionY, radius * projectTimeSchedule.ratioOfPassedDays(), paint);
+
+            /**画各个阶段的圆**/
+            float[] ratiosOfStages = projectTimeSchedule.ratioOfStageDays();
+            paint.setStyle(Paint.Style.STROKE);
+            for (int i = projectTimeSchedule.getSumOfStageDate() - 1; i >= 0; i--) {
+//            Log.d("LoadStageCircle", "success id " + ratiosOfStages[i]);
+                paint.setColor(0x3F483D8B);
+                canvas.drawCircle(centerPositionX, centerPositionY, radius * ratiosOfStages[i] * projectTimeSchedule.ratioOfExpectedDay(), paint);
+            }
         }
     }
 }
