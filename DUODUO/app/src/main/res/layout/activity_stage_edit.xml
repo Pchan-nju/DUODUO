@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstSetActivity">
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/StageTargetLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/background_top_login"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="STAGE"
+                        android:textAlignment="center"
+                        android:textColor="@color/blue_tint_state"
+                        android:textSize="50sp"
+                        android:textStyle="bold"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/stageNumber"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/background_number"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/stage_text"
+                    android:textSize="40dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stage's due time"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="32dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_dark_state"/>
+
+            <EditText
+                android:id="@+id/stageDueTime"
+                style="@android:style/Widget.DatePicker"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/background_edit_text"
+                android:ems="10"
+                android:hint="e.g 2023-05-20"
+                android:inputType="date"
+                android:padding="8dp"
+                android:textColor="@color/blue_dark_state"
+                android:textSize="16sp" />
+
+            <!--        editTarget 一条target的框架-->
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mark your targets' progress"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="32dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_dark_state"/>
+
+            <LinearLayout
+                android:id="@+id/SingleTargetLayout"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <android.widget.CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="-8dp"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/targetText"
+                    android:layout_width="290dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/background_edit_target"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingStart="8dp"
+                    android:paddingTop="16dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="16dp"
+                    android:text=""
+                    android:textColor="@color/blue_tint_state"
+                    android:textSize="20dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/delete"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:text="-"
+                    android:textColor="@color/blue_light_state"
+                    android:textSize="50dp"
+                    android:layout_marginStart="6dp"/>
+
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addTarget"
+                style="@android:style/Widget.Button"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="48dp"
+                android:background="@drawable/background_add_target"
+                android:padding="4dp"
+                android:paddingStart="16dp"
+                android:text="Add Target"
+                android:textColor="@color/blue_light_state"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="100dp"
+                android:layout_height="100dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cancleButton"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/background_quit_button"
+                    android:onClick="btnNext"
+                    android:padding="4dp"
+                    android:paddingStart="16dp"
+                    android:text="CANCLE"
+                    android:textColor="@color/blue_light_state"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/doneBotton"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/background_next_button"
+                    android:onClick="btnNext"
+                    android:padding="4dp"
+                    android:paddingStart="16dp"
+                    android:text="DONE"
+                    android:textColor="@color/blue_tint_state"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

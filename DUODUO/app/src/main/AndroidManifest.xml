@@ -16,6 +16,9 @@
             android:name=".WelcomeActivity"
             android:exported="false" />
         <activity
+            android:name=".StageEditActivity"
+            android:exported="false" />
+        <activity
             android:name=".StageSetActivity"
             android:exported="false" />
         <activity
