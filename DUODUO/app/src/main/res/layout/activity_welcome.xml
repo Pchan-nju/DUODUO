@@ -29,8 +29,10 @@
                     android:background="@drawable/background_top_login"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.32">
 
                     <TextView
                         android:id="@+id/textView"
@@ -44,10 +46,8 @@
 
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.497"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.634" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -62,8 +62,8 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/view_pager_welcome"
+                    <ImageSwitcher
+                        android:id="@+id/imageSwitcher"
                         android:layout_width="match_parent"
                         android:layout_height="500dp"
                         android:orientation="vertical" />

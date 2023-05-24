@@ -80,12 +80,14 @@ public class MainActivity extends AppCompatActivity {
 
         /*****初始化一个ProjectTimeSchedule实例，并应用于timeScheduleCircleView*****/
         projectTimeSchedule = ProjectTimeScheduleFileIO.getScheduleFromFile(this, projectNameStrings[0]);
+/*
         Log.d("Read Schedule Files", "Success");
         Log.d("Project name", projectTimeSchedule.getProjectName());
         Log.d("Project beginning time", projectTimeSchedule.getBeginningDateString());
         Log.d("Project expected end time", projectTimeSchedule.getExpectDateString());
         Log.d("Project deadline", projectTimeSchedule.getDeadlineDateString());
         Log.d("Project sum of stages", "" + projectTimeSchedule.getSumOfStageDate());
+        */
         timeScheduleCircleView = new TimeScheduleCircleView(this);
         timeScheduleCircleView.setProjectTimeSchedule(projectTimeSchedule);
         timeScheduleCircleView.setCenterPosition(centerX, centerY);
