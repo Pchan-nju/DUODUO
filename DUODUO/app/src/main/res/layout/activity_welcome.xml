@@ -6,12 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".FirstSetActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-127dp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -19,12 +13,12 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="170dp">
+                android:layout_height="140dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="170dp"
+                    android:layout_height="140dp"
                     android:layout_marginBottom="50dp"
                     android:background="@drawable/background_top_login"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -53,22 +47,14 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageSwitcher
-                        android:id="@+id/imageSwitcher"
-                        android:layout_width="match_parent"
-                        android:layout_height="500dp"
-                        android:orientation="vertical" />
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageSwitcher
+                android:id="@+id/imageSwitcher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:adjustViewBounds="true"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/SkipButton" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/SkipButton"
@@ -88,6 +74,6 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
         </LinearLayout>
-    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
