@@ -16,7 +16,7 @@ public class StartActivity extends AppCompatActivity {
     }
 
     public void startNewProject(View view) {
-        Intent intent = new Intent(this, FirstSetActivity.class);
+        Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
     }
 }

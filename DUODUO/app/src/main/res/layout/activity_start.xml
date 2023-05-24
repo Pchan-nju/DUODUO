@@ -50,7 +50,7 @@
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Provide you better project management."
+                    android:text="Provide you with better project management."
                     android:layout_marginTop="10dp"
                     android:textColor="@color/blue_dark_state"
                     android:textStyle="normal"
