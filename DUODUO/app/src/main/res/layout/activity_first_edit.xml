@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstEditActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/StageTargetLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/background_top_login"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit information"
+                        android:textAlignment="center"
+                        android:textColor="@color/blue_tint_state"
+                        android:textSize="50sp"
+                        android:textStyle="bold"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit project name"
+                android:layout_marginStart="32dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_dark_state"/>
+
+            <EditText
+                android:id="@+id/projectNameEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="8dp"
+                android:textSize="16sp"
+                android:textColor="@color/blue_dark_state"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="Enter your project name"
+                android:background="@drawable/background_edit_text"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginTop="8dp"
+                />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit project start time"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="32dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_dark_state"/>
+
+            <EditText
+                android:id="@+id/startTimeEditTextView"
+                style="@android:style/Widget.DatePicker"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/background_edit_text"
+                android:ems="10"
+                android:hint="e.g 2023-05-20"
+                android:inputType="date"
+                android:padding="8dp"
+                android:textColor="@color/blue_dark_state"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit expected end time"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="32dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_dark_state"/>
+
+            <EditText
+                android:id="@+id/expectTimeEditTextView"
+                style="@android:style/Widget.DatePicker"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/background_edit_text"
+                android:ems="10"
+                android:hint="e.g 2023-05-20"
+                android:inputType="date"
+                android:padding="8dp"
+                android:textColor="@color/blue_dark_state"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit deadline"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="32dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_dark_state"/>
+
+            <EditText
+                android:id="@+id/deadlineEditTextView"
+                style="@android:style/Widget.DatePicker"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/background_edit_text"
+                android:ems="10"
+                android:hint="e.g 2023-05-20"
+                android:inputType="date"
+                android:padding="8dp"
+                android:textColor="@color/blue_dark_state"
+                android:textSize="16sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="50dp"
+                android:layout_height="100dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cancleButton"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/background_quit_button"
+                    android:onClick="btnNext"
+                    android:padding="4dp"
+                    android:paddingStart="16dp"
+                    android:text="CANCLE"
+                    android:textColor="@color/blue_light_state"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/doneBotton"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/background_next_button"
+                    android:onClick="btnNext"
+                    android:padding="4dp"
+                    android:paddingStart="16dp"
+                    android:text="DONE"
+                    android:textColor="@color/blue_tint_state"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
