@@ -213,4 +213,8 @@ public class StageSetActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void btnNext(View view) {
+        finish();
+    }
 }
