@@ -222,6 +222,8 @@
 
             <ImageButton
                 android:id="@+id/imageButton"
+                android:contentDescription="Back"
+                android:onClick="Back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00000000"
@@ -237,6 +239,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:text="back"
+                android:onClick="Back"
                 android:textColor="@color/blue_dark_state"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageButton"

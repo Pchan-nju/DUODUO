@@ -9,9 +9,6 @@ import java.util.concurrent.TimeUnit;
 /*
 * 记录用户单个project的日期安排信息
 * 日期格式均为 "yyyy-MM-dd"
-* TODO() {
-*   是否超过了预定的时间：阶段期望时间或者deadline;
-*  }
 * */
 public class ProjectTimeSchedule {
     private String projectName;
@@ -23,9 +20,9 @@ public class ProjectTimeSchedule {
     private String deadlineDateString;
     private int sumOfStageDate = 0;
     private String[] stageDateStrings = {"", "", "", "", ""}; // 最多设置5个中间阶段时间点
-    private int[] sumOfStageTarget = new int[5];
-    private String[][] stageTarget = new String[5][5]; // stageTarget[i][j] 表示 第 i + 1 个stage第 j + 1 个目标
-    private boolean[][] stageTargetFinish = new boolean[5][5];
+    private int[] sumOfStageTarget = new int[10];
+    private String[][] stageTarget = new String[10][10]; // stageTarget[i][j] 表示 第 i + 1 个stage第 j + 1 个目标
+    private boolean[][] stageTargetFinish = new boolean[10][10];
 
     public ProjectTimeSchedule(String projectName,String beginningDateString, String deadlineDateString, int sumOfStageDate, String... stageDateStrings) {
         this.projectName = projectName;
@@ -141,6 +138,9 @@ public class ProjectTimeSchedule {
     public float ratioOfPassedDays() {
         return (float) daysBetween(beginningDateString, currentDateString) / daysBetween(beginningDateString, deadlineDateString);
     }
+    public int numberOfPassedDays() {
+        return daysBetween(beginningDateString, currentDateString);
+    }
 
     public float ratioOfExpectedDay() {
         return (float) daysBetween(beginningDateString, expectDateString) / daysBetween(beginningDateString, deadlineDateString);
@@ -202,5 +202,24 @@ public class ProjectTimeSchedule {
 
     public boolean ifExpectedDateOverDue() {
         return (daysBetween(currentDateString, expectDateString) < 0);
+    }
+
+    // target完成度
+    public int ratioOfCompletedTargets() {
+        int tot = 0;
+        int completedCnt = 0;
+        for (int i = 0; i < sumOfStageDate; i++) {
+            tot += sumOfStageTarget[i];
+            for (int j = 0; j < sumOfStageTarget[i]; i++) {
+                if (stageTargetFinish[i][j]) {
+                    completedCnt++;
+                }
+            }
+        }
+        if (tot != 0) {
+            return completedCnt * 100 / tot;
+        } else {
+            return 0;
+        }
     }
 }

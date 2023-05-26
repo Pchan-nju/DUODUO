@@ -14,8 +14,10 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -70,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+
+        /***********************************************设置初始页面**************************************************/
         /*获取屏幕中心坐标*/
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -80,14 +84,10 @@ public class MainActivity extends AppCompatActivity {
 
         /*****初始化一个ProjectTimeSchedule实例，并应用于timeScheduleCircleView*****/
         projectTimeSchedule = ProjectTimeScheduleFileIO.getScheduleFromFile(this, projectNameStrings[0]);
-/*
-        Log.d("Read Schedule Files", "Success");
-        Log.d("Project name", projectTimeSchedule.getProjectName());
-        Log.d("Project beginning time", projectTimeSchedule.getBeginningDateString());
-        Log.d("Project expected end time", projectTimeSchedule.getExpectDateString());
-        Log.d("Project deadline", projectTimeSchedule.getDeadlineDateString());
-        Log.d("Project sum of stages", "" + projectTimeSchedule.getSumOfStageDate());
-        */
+
+        // 读取结果输出到日志
+        projectLog(projectTimeSchedule);
+
         timeScheduleCircleView = new TimeScheduleCircleView(this);
         timeScheduleCircleView.setProjectTimeSchedule(projectTimeSchedule);
         timeScheduleCircleView.setCenterPosition(centerX, centerY);
@@ -104,6 +104,24 @@ public class MainActivity extends AppCompatActivity {
 
         // 应用timeScheduleCircleView
         constraintLayout.addView(timeScheduleCircleView);
+
+        // 添加stageCircle
+        for (int i = 0 ; i < projectTimeSchedule.getSumOfStageDate(); i++) {
+            StageCircleView stageCircleView = new StageCircleView(this);
+            stageCircleView.setStage(i + 1, projectTimeSchedule);
+            ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            stageCircleView.setLayoutParams(layoutParams);
+            stageCircleView.setX(2 * centerX/(projectTimeSchedule.getSumOfStageDate() + 1) * (i + 1) - 80.0f);
+            stageCircleView.setY(centerY/2.5f);
+            constraintLayout.addView(stageCircleView);
+            stageCircleView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, StageEditActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
 
         // 增加project
         LayoutInflater inflater = getLayoutInflater();
@@ -125,6 +143,19 @@ public class MainActivity extends AppCompatActivity {
         // 获取 Edit 按钮
         AppCompatButton editButton = (AppCompatButton) findViewById(R.id.button);
 
+        editButton.setOnClickListener(new View.OnClickListener() {
+            // 点击进入 FirstEditActivity
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FirstEditActivity.class);
+                intent.putExtra("Project name", projectNameStrings[lastProjectIndex[0] - 1]);
+                intent.putExtra("Project index", lastProjectIndex[0]);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        // 按钮切换
         for (int i = 1; i < MAX_PROJECT_NUM; i++) {
             int finalI = i;
             projectButtons[i].setOnClickListener(new View.OnClickListener() {
@@ -140,6 +171,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+
+        // delete 按钮
+        ImageButton deleteButton = (ImageButton) findViewById(R.id.DeleteButton);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DeleteProjectActivity.class);
+                intent.putExtra("Project name", projectNameStrings[lastProjectIndex[0] - 1]);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     public static Context getAppContext(){
@@ -202,7 +246,10 @@ public class MainActivity extends AppCompatActivity {
 
                 constraintLayout.addView(timeScheduleCircleView);
                 projectTimeSchedule = newProjectTimeSchedule;
+
+                // 输出日志
                 Log.d("Switch Project", "Success id " + index);
+                projectLog(projectTimeSchedule);
             } catch (Exception e) {
                 e.printStackTrace();
                 Log.d("Switch Project", "ERROR id " + index);
@@ -214,5 +261,14 @@ public class MainActivity extends AppCompatActivity {
             MaterialButton materialButton = newAddProjectButton();
             constraintLayout.addView(materialButton);
         }
+    }
+
+    public static void projectLog(ProjectTimeSchedule projectTimeSchedule) {
+        Log.d("Read Schedule Files", "Success");
+        Log.d("Project name", projectTimeSchedule.getProjectName());
+        Log.d("Project beginning time", projectTimeSchedule.getBeginningDateString());
+        Log.d("Project expected end time", projectTimeSchedule.getExpectDateString());
+        Log.d("Project deadline", projectTimeSchedule.getDeadlineDateString());
+        Log.d("Project sum of stages", "" + projectTimeSchedule.getSumOfStageDate());
     }
 }

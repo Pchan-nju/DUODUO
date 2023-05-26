@@ -3,8 +3,6 @@ package com.pchan.duoduo;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 
 /***根据已有的ProjectTimeSchedule确定展示***/
@@ -33,7 +31,15 @@ public class TimeScheduleCircleView extends View {
         final float radius = 400.0f;
 
         /**绘制不同大小的圆**/
-        if (projectTimeSchedule.ifExpectedDateOverDue()) {
+        if (projectTimeSchedule.ifOverDue()) {
+            /**画deadline的圆**/
+            paint.setColor(0x3FDC143C);
+            paint.setStyle(Paint.Style.FILL);
+            canvas.drawCircle(centerPositionX, centerPositionY, radius, paint);
+            paint.setColor(0xFFFFFFFF);
+            paint.setTextSize(200);
+            canvas.drawText("Over", centerPositionX / 1.6f, centerPositionY, paint);
+        } else if (!projectTimeSchedule.ifExpectedDateOverDue()) {
             /**先画expectedDate的圆**/
             paint.setColor(0x3FE6E4F6);
             paint.setStyle(Paint.Style.FILL);
@@ -43,7 +49,7 @@ public class TimeScheduleCircleView extends View {
             paint.setColor(0x9FE6E6FA);
             paint.setStrokeWidth(5);
             paint.setStyle(Paint.Style.FILL_AND_STROKE);
-            canvas.drawCircle(centerPositionX, centerPositionY, radius * projectTimeSchedule.ratioOfPassedDays() / projectTimeSchedule.ratioOfExpectedDay(), paint);
+            canvas.drawCircle(centerPositionX, centerPositionY, radius * projectTimeSchedule.ratioOfPassedDays() * projectTimeSchedule.ratioOfExpectedDay(), paint);
 
             /**画各个阶段的圆**/
             float[] ratiosOfStages = projectTimeSchedule.ratioOfTargetStageFromBeginningToExpected();
