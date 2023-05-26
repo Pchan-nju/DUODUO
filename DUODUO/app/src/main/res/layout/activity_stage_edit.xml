@@ -120,7 +120,7 @@
                     android:id="@+id/checkBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="-8dp"
                     android:layout_weight="1" />
 
@@ -128,7 +128,7 @@
                     android:id="@+id/targetText"
                     android:layout_width="290dp"
                     android:layout_height="50dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="0dp"
                     android:background="@drawable/background_edit_target"
                     android:ems="10"
                     android:inputType="text"

@@ -27,7 +27,9 @@ public class DeleteProjectActivity extends AppCompatActivity {
         // 设置 dateNumber
         TextView dateNumberView = findViewById(R.id.dateNumber);
         dateNumberView.setText("" + projectTimeSchedule.numberOfPassedDays());
-        // TODO:设置 rateNumber
+        // 设置 rateNumber
+        TextView rateNumberTextView = findViewById(R.id.rateNumber);
+        rateNumberTextView.setText(projectTimeSchedule.ratioOfCompletedTargets() + "%");
         // 设置 EndButton ——— 删除项目
         MaterialButton endButton = findViewById(R.id.endButton);
         endButton.setOnClickListener(new View.OnClickListener() {

@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     public MaterialButton originAddProjectButton;
     public ScaleAnimation scaleAnimation;
     public LinearLayout projectButtonsLinearLayout;
+    public TextView rateNumber;
+    public int centerX, centerY;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Start", "A new project");
             Intent intent = new Intent(this, StartActivity.class);
             startActivity(intent);
+            finish();
         } else {
             Log.d("Start", "already have " + sumOfUserProjects + " projects");
             for (int i = 1; i <= sumOfUserProjects; i++) {
@@ -77,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
         /*获取屏幕中心坐标*/
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int centerX = displayMetrics.widthPixels / 2;
-        int centerY = displayMetrics.heightPixels / 2;
+        centerX = displayMetrics.widthPixels / 2;
+        centerY = displayMetrics.heightPixels / 2;
 
         constraintLayout = (ConstraintLayout) findViewById(R.id.activity_main);
 
@@ -94,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
         projectNameTextView.setText(projectTimeSchedule.getProjectName());
 
-        /*********设置动画*********/
+        // 设置动画
         timeScheduleCircleView.setAlpha(0f);
         scaleAnimation = new ScaleAnimation(0f, 1f, 0f, 1f,
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
@@ -114,14 +117,24 @@ public class MainActivity extends AppCompatActivity {
             stageCircleView.setX(2 * centerX/(projectTimeSchedule.getSumOfStageDate() + 1) * (i + 1) - 80.0f);
             stageCircleView.setY(centerY/2.5f);
             constraintLayout.addView(stageCircleView);
+            int finalI = i;
             stageCircleView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, StageEditActivity.class);
+                    intent.putExtra("stageIndex", finalI + 1);
+                    intent.putExtra("Project name", projectTimeSchedule.getProjectName());
                     startActivity(intent);
+                    finish();
                 }
             });
         }
+
+        // 设置 rateNumber
+        rateNumber = findViewById(R.id.textView8);
+        rateNumber.setText(projectTimeSchedule.ratioOfCompletedTargets() + "%");
+
+        /**********************************************************************************************************/
 
         // 增加project
         LayoutInflater inflater = getLayoutInflater();
@@ -217,12 +230,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeProject(int index) {
-        // 去除页面已有的addProjectButton或TimeScheduleCircleView
+        // 去除页面已有的 addProjectButton 或 TimeScheduleCircleView 或 stageCircleViews
+        View[] childToRemove = new View[constraintLayout.getChildCount()];
+        int countOfChildToRemove = 0;
         for (int i = 0; i < constraintLayout.getChildCount(); i++) {
             View child = constraintLayout.getChildAt(i);
-            if (child instanceof MaterialButton || child instanceof TimeScheduleCircleView) {
+            if (child instanceof MaterialButton || child instanceof TimeScheduleCircleView || child instanceof StageCircleView) {
                 try {
-                    constraintLayout.removeView(child);
+                    childToRemove[countOfChildToRemove] = child;
+                    countOfChildToRemove++;
                 } catch (IllegalArgumentException e) {
                     e.printStackTrace();
                     Log.d("Error", "remove view failed " + index);
@@ -230,11 +246,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }
+        for (int i = 0; i < countOfChildToRemove; i++) {
+            constraintLayout.removeView(childToRemove[i]);
+        }
         // 判断这个Project是否存在
         if (sumOfUserProjects >= index) {
             // Project存在
             try {
+                // 重置标题
                 projectNameTextView.setText(projectNameStrings[index - 1]);
+                // 重置 TimeScheduleCircleView
                 ProjectTimeSchedule newProjectTimeSchedule = ProjectTimeScheduleFileIO.getScheduleFromFile(MainActivity.this, projectNameStrings[index - 1]);
                 timeScheduleCircleView.setProjectTimeSchedule(newProjectTimeSchedule);
                 constraintLayout.removeView(timeScheduleCircleView);
@@ -246,6 +267,30 @@ public class MainActivity extends AppCompatActivity {
 
                 constraintLayout.addView(timeScheduleCircleView);
                 projectTimeSchedule = newProjectTimeSchedule;
+
+                // 重置完成度
+                rateNumber.setText("" + newProjectTimeSchedule.ratioOfCompletedTargets() + "%");
+
+                for (int i = 0 ; i < projectTimeSchedule.getSumOfStageDate(); i++) {
+                    StageCircleView stageCircleView = new StageCircleView(this);
+                    stageCircleView.setStage(i + 1, projectTimeSchedule);
+                    ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    stageCircleView.setLayoutParams(layoutParams);
+                    stageCircleView.setX(2 * centerX/(projectTimeSchedule.getSumOfStageDate() + 1) * (i + 1) - 80.0f);
+                    stageCircleView.setY(centerY/2.5f);
+                    constraintLayout.addView(stageCircleView);
+                    int finalI = i;
+                    stageCircleView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(MainActivity.this, StageEditActivity.class);
+                            intent.putExtra("stageIndex", finalI + 1);
+                            intent.putExtra("Project name", projectTimeSchedule.getProjectName());
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
+                }
 
                 // 输出日志
                 Log.d("Switch Project", "Success id " + index);
@@ -259,16 +304,26 @@ public class MainActivity extends AppCompatActivity {
             // 增添新建Project按钮
             projectNameTextView.setText("A New Project!");
             MaterialButton materialButton = newAddProjectButton();
+            rateNumber.setText("");
             constraintLayout.addView(materialButton);
         }
     }
 
     public static void projectLog(ProjectTimeSchedule projectTimeSchedule) {
-        Log.d("Read Schedule Files", "Success");
-        Log.d("Project name", projectTimeSchedule.getProjectName());
-        Log.d("Project beginning time", projectTimeSchedule.getBeginningDateString());
-        Log.d("Project expected end time", projectTimeSchedule.getExpectDateString());
-        Log.d("Project deadline", projectTimeSchedule.getDeadlineDateString());
-        Log.d("Project sum of stages", "" + projectTimeSchedule.getSumOfStageDate());
+        try {
+            Log.d("Read Schedule Files", "Success");
+            Log.d("Project name", projectTimeSchedule.getProjectName());
+            Log.d("Project beginning time", projectTimeSchedule.getBeginningDateString());
+            Log.d("Project expected end time", projectTimeSchedule.getExpectDateString());
+            Log.d("Project deadline", projectTimeSchedule.getDeadlineDateString());
+            Log.d("Project sum of stages", "" + projectTimeSchedule.getSumOfStageDate());
+            for (int i = 0; i < projectTimeSchedule.getSumOfStageDate(); i++) {
+                for (int j = 0; j < projectTimeSchedule.getSumOfStageTarget()[i] - 1; j++) {
+                    Log.d("stage" + (i + 1) + " target" + (j + 1), projectTimeSchedule.getStageTarget()[i][j]);
+                }
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 }

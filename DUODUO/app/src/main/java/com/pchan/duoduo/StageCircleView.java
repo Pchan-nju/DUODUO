@@ -89,7 +89,7 @@ public class StageCircleView extends View {
         // 再画扇形
         paint.setColor(0xFFE6E4F6);
         int startAngle = -90;           // 扇形的起始角度
-        int sweepAngle = 90;           // 扇形的扫描角度
+        int sweepAngle = (int) ((int) 360 * projectTimeSchedule.ratioOfCompletedTargetsOfStage(stageIndex));           // 扇形的扫描角度
 
         rectF = new RectF(centerPositionX - radius, centerPositionY - radius, centerPositionX + radius, centerPositionY + radius);
         canvas.drawArc(centerPositionX - radius, centerPositionY - radius, centerPositionX + radius, centerPositionY + radius,

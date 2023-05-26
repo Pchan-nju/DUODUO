@@ -79,6 +79,9 @@ public class StageSetActivity extends AppCompatActivity {
 
         // 获取stageDueEditText
         stageDueEditText = findViewById(R.id.stageDueTimeEditTextView);
+        if (sumOfStage == 1) {
+            stageDueEditText.setText(firstSetMessage[2]);
+        }
 
         /***Next按钮功能实现***/
         Button nextButton = findViewById(R.id.nextButton1); // 设置为NEXT按钮
@@ -126,6 +129,7 @@ public class StageSetActivity extends AppCompatActivity {
                     ProjectTimeScheduleFileIO.createNewScheduleFile(context, projectTimeSchedule);
                     Intent intent = new Intent(StageSetActivity.this, MainActivity.class);
                     startActivity(intent);
+                    finish();
                 } else {
                     if (sumOfStage == stageIndex) {
                         nextButton.setText("Finish");

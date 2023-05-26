@@ -222,4 +222,19 @@ public class ProjectTimeSchedule {
             return 0;
         }
     }
+
+    // 每个阶段target的完成度
+    public float ratioOfCompletedTargetsOfStage(int stageIndex) {
+        int completedCnt = 0;
+        for (int i = 0; i < sumOfStageTarget[stageIndex - 1]; i++) {
+            if (stageTargetFinish[stageIndex - 1][i]) {
+                completedCnt++;
+            }
+        }
+        if (sumOfStageTarget[stageIndex - 1] != 0) {
+            return (float) completedCnt / sumOfStageTarget[stageIndex - 1];
+        } else {
+            return 1.0f;
+        }
+    }
 }
