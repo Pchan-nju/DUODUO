@@ -60,7 +60,7 @@ public class ProjectTimeScheduleFileIO{
                 for(int j = 0; j < s_cols; j++){
                     Sb.append(stageTarget[i][j]);
                     if(j != s_cols - 1){
-                        sb.append(",");
+                        Sb.append(",");
                     }
                 }
                 Sb.append("\n");
