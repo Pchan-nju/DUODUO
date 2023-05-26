@@ -30,6 +30,7 @@ public class StageEditActivity extends AppCompatActivity {
     public String[] stageDateStrings;
     public int[] sumOfTarget;
     public String[][] stageTargetStrings;
+    public boolean[][] ifTargetFinish;
     LinearLayout targetLinearLayout;
     LinearLayout linearLayout;
 
@@ -48,6 +49,7 @@ public class StageEditActivity extends AppCompatActivity {
         stageDateStrings = projectTimeSchedule.getStageDateStrings();
         sumOfTarget = projectTimeSchedule.getSumOfStageTarget();
         stageTargetStrings = projectTimeSchedule.getStageTarget();
+        ifTargetFinish = projectTimeSchedule.getStageTargetFinish();
 
         linearLayout = findViewById(R.id.StageTargetLinearLayout);// 获取当前LinearLayout页面布局
 
@@ -57,8 +59,8 @@ public class StageEditActivity extends AppCompatActivity {
         targetLinearLayout = findViewById(R.id.SingleTargetLayout);
         linearLayout.removeView(targetLinearLayout);
         for (int i = 0; i < sumOfEditText; i++) {
-//            LinearLayout newLinearLayout = newLinearLayoutOfTarget(stageTargetStrings[stageIndex - 1][i]);
-            LinearLayout newLinearLayout = newLinearLayoutOfTarget("" + i);
+            LinearLayout newLinearLayout = newLinearLayoutOfTarget(stageTargetStrings[stageIndex - 1][i], ifTargetFinish[stageIndex - 1][i]);
+//            LinearLayout newLinearLayout = newLinearLayoutOfTarget("" + i);
             linearLayout.addView(newLinearLayout, linearLayout.getChildCount() - 2);
         }
 
@@ -102,12 +104,14 @@ public class StageEditActivity extends AppCompatActivity {
                     View child = linearLayout.getChildAt(1 + 3);
                     if (child instanceof LinearLayout) {
                         AppCompatEditText editText = (AppCompatEditText) ((LinearLayout) child).getChildAt(1);
+                        CheckBox checkBox = (CheckBox) ((LinearLayout) child).getChildAt(0);
                         if (editText.getText()!= null && !TextUtils.isEmpty(editText.getText().toString())) {
                             Log.d("stageIndex, i", stageIndex + ", " + i);
                             Log.d("length", "" + stageTargetStrings.length + ", " + stageTargetStrings[0].length);
                             stageTargetStrings[stageIndex - 1][i] = editText.getText().toString();
                             Log.d("Stage Target " + (stageIndex - 1) + ", " + (i - 1), stageTargetStrings[stageIndex - 1][i - 1]);
                         }
+                        ifTargetFinish[stageIndex - 1][i - 1] = checkBox.isChecked();
                     }
                     linearLayout.removeView(child);
                 }
@@ -120,6 +124,8 @@ public class StageEditActivity extends AppCompatActivity {
                         stageDateStrings,
                         sumOfTarget,
                         stageTargetStrings);
+
+                projectTimeSchedule.setStageTargetFinish(ifTargetFinish);
 
                 ProjectTimeScheduleFileIO.removeScheduleFile(StageEditActivity.this, projectName);
                 ProjectTimeScheduleFileIO.createNewScheduleFile(StageEditActivity.this, projectTimeSchedule);
@@ -140,13 +146,13 @@ public class StageEditActivity extends AppCompatActivity {
                 }
                 sumOfEditText++;
                 Log.d("Press Add", "success");
-                LinearLayout newLinearLayout = newLinearLayoutOfTarget("");
+                LinearLayout newLinearLayout = newLinearLayoutOfTarget("", false);
                 linearLayout.addView(newLinearLayout, linearLayout.getChildCount() - 2);
             }
         });
     }
 
-    public LinearLayout newLinearLayoutOfTarget(String str) {
+    public LinearLayout newLinearLayoutOfTarget(String str, boolean isChecked) {
         LinearLayout newLinearLayout = new LinearLayout(StageEditActivity.this);
         newLinearLayout.setLayoutParams(targetLinearLayout.getLayoutParams());
         newLinearLayout.setOrientation(targetLinearLayout.getOrientation());
@@ -172,6 +178,7 @@ public class StageEditActivity extends AppCompatActivity {
                 CheckBox originalCheckBox = (CheckBox) child;
                 CheckBox newCheckBox = new CheckBox(StageEditActivity.this);
                 newCheckBox.setLayoutParams(originalCheckBox.getLayoutParams());
+                newCheckBox.setChecked(isChecked);
                 newLinearLayout.addView(newCheckBox);
             } else if (child instanceof AppCompatButton) {
                 // 复制 Button
