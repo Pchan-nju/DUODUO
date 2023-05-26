@@ -24,6 +24,10 @@ public class ProjectTimeSchedule {
     private String[][] stageTarget = new String[10][10]; // stageTarget[i][j] 表示 第 i + 1 个stage第 j + 1 个目标
     private boolean[][] stageTargetFinish = new boolean[10][10];
 
+    public String getCurrentDateString(){
+        return currentDateString;
+    }
+
     public ProjectTimeSchedule(String projectName,String beginningDateString, String deadlineDateString, int sumOfStageDate, String... stageDateStrings) {
         this.projectName = projectName;
         this.beginningDateString = beginningDateString;

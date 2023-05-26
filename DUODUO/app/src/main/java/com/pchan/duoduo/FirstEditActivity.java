@@ -51,7 +51,7 @@ public class FirstEditActivity extends AppCompatActivity {
                 projectTimeSchedule.setBeginningDateString(startTimeEditTextView.getText().toString());
                 projectTimeSchedule.setExpectDateString(expectTimeEditTextView.getText().toString());
                 projectTimeSchedule.setDeadlineDateString(deadlineEditTextView.getText().toString());
-                MainActivity.projectLog(projectTimeSchedule);
+                //MainActivity.projectLog(projectTimeSchedule);
                 ProjectTimeScheduleFileIO.removeScheduleFile(FirstEditActivity.this, projectName);
                 ProjectTimeScheduleFileIO.createNewScheduleFile(FirstEditActivity.this, projectTimeSchedule);
                 final SharedPreferences sp = getSharedPreferences("user_project", MODE_PRIVATE);

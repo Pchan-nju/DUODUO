@@ -3,12 +3,18 @@ package com.pchan.duoduo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.NotificationCompat;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -43,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // 启动后台服务
+        Intent serviceIntent = new Intent(this, NotificationService.class);
+        startService(serviceIntent);
+
         projectNameTextView = findViewById(R.id.textView7);
         final SharedPreferences sp = getSharedPreferences("user_project", MODE_PRIVATE);
         sumOfUserProjects = sp.getInt("sum",0);
@@ -307,6 +318,7 @@ public class MainActivity extends AppCompatActivity {
             rateNumber.setText("");
             constraintLayout.addView(materialButton);
         }
+
     }
 
     public static void projectLog(ProjectTimeSchedule projectTimeSchedule) {
