@@ -18,7 +18,7 @@ import java.util.Calendar;
 public class NotificationService extends Service {
     private static final String CHANNEL_ID = "notification_channel_id";
     private static final String CHANNEL_NAME = "my_channel";
-    private static final long INTERVAL_MILLS = 30 * 1000; // 若要每天早上8点进行通知任务的判断，需设置为一天的毫秒数24 * 60 * 60 * 1000
+    private static final long INTERVAL_MILLS = 5 * 1000; // 若要每天早上8点进行通知任务的判断，需设置为一天的毫秒数24 * 60 * 60 * 1000
     private static final int EXECUTION_HOUR = 8; //执行任务的小时
     private static final int EXECUTION_MINUTE = 0; //执行任务的分钟
 
@@ -122,7 +122,7 @@ public class NotificationService extends Service {
         // 创建一个跳转到 MainActivity 的 Intent
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         // 构建通知对象，设置标题、内容、图标等相关信息
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
