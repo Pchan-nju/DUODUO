@@ -108,7 +108,7 @@ public class StageEditActivity extends AppCompatActivity {
                         if (editText.getText()!= null && !TextUtils.isEmpty(editText.getText().toString())) {
                             Log.d("stageIndex, i", stageIndex + ", " + i);
                             Log.d("length", "" + stageTargetStrings.length + ", " + stageTargetStrings[0].length);
-                            stageTargetStrings[stageIndex - 1][i] = editText.getText().toString();
+                            stageTargetStrings[stageIndex - 1][i - 1] = editText.getText().toString();
                             Log.d("Stage Target " + (stageIndex - 1) + ", " + (i - 1), stageTargetStrings[stageIndex - 1][i - 1]);
                         }
                         ifTargetFinish[stageIndex - 1][i - 1] = checkBox.isChecked();
