@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         projectNameTextView = findViewById(R.id.textView7);
         final SharedPreferences sp = getSharedPreferences("user_project", MODE_PRIVATE);
-        sumOfUserProjects = sp.getInt("sum",-1);
+        sumOfUserProjects = sp.getInt("sum",0);
         projectNameStrings = new String[sumOfUserProjects + 2];
 
         // 获取底下一排按钮的LinearLayout

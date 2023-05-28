@@ -203,7 +203,7 @@ public class StageEditActivity extends AppCompatActivity {
                             View targetChild = linearLayout.getChildAt(i);
                             if (targetChild instanceof LinearLayout) {
                                 TextView numberTextView = (TextView) ((LinearLayout) targetChild).getChildAt(0);
-                                numberTextView.setText("0" + (i - 3));
+//                                numberTextView.setText("0" + (i - 3));
                             }
                         }
                     }
