@@ -83,7 +83,7 @@
                         android:layout_marginTop="24dp"
                         android:text="Has accompanied you for "
                         android:textColor="@color/blue_dark_state"
-                        android:textSize="24dp"
+                        android:textSize="20dp"
                         android:textStyle="normal" />
 
                     <TextView
@@ -93,7 +93,7 @@
                         android:layout_marginTop="24dp"
                         android:text="100"
                         android:textColor="@color/blue_dark_state"
-                        android:textSize="24dp"
+                        android:textSize="20dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -103,7 +103,7 @@
                         android:layout_marginTop="24dp"
                         android:text="day(s)"
                         android:textColor="@color/blue_dark_state"
-                        android:textSize="24dp"
+                        android:textSize="20dp"
                         android:textStyle="normal"
                         android:layout_marginStart="4dp"/>
                 </LinearLayout>
@@ -123,7 +123,7 @@
                         android:layout_marginTop="24dp"
                         android:text="Your project progress is"
                         android:textColor="@color/blue_dark_state"
-                        android:textSize="24dp"
+                        android:textSize="20dp"
                         android:textStyle="normal" />
 
                     <TextView
@@ -133,7 +133,7 @@
                         android:layout_marginTop="24dp"
                         android:text="100％"
                         android:textColor="@color/blue_dark_state"
-                        android:textSize="24dp"
+                        android:textSize="20dp"
                         android:textStyle="bold"
                         android:layout_marginStart="4dp"/>
 
@@ -154,7 +154,7 @@
                         android:layout_marginTop="24dp"
                         android:text="You've done a great job."
                         android:textColor="@color/blue_dark_state"
-                        android:textSize="24dp"
+                        android:textSize="20dp"
                         android:textStyle="normal" />
 
 
@@ -175,7 +175,7 @@
                         android:layout_marginTop="24dp"
                         android:text="However, don't rest on your laurels."
                         android:textColor="@color/blue_dark_state"
-                        android:textSize="24dp"
+                        android:textSize="20dp"
                         android:textStyle="normal" />
 
                 </LinearLayout>
@@ -195,7 +195,7 @@
                         android:layout_marginTop="24dp"
                         android:text="Wish you better projects."
                         android:textColor="@color/blue_dark_state"
-                        android:textSize="24dp"
+                        android:textSize="20dp"
                         android:textStyle="normal" />
 
                 </LinearLayout>

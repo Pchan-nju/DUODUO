@@ -39,8 +39,8 @@ public class FirstEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                Intent mainIntent = new Intent(FirstEditActivity.this, MainActivity.class);
-                startActivity(mainIntent);
+//                Intent mainIntent = new Intent(FirstEditActivity.this, MainActivity.class);
+//                startActivity(mainIntent);
             }
         });
 

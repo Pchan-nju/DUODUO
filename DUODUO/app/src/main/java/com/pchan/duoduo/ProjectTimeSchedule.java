@@ -181,6 +181,15 @@ public class ProjectTimeSchedule {
         return ans;
     }
 
+    public float[] ratioOfStageFromBeginningToExpected() {
+        float tot = daysBetween(beginningDateString, expectDateString);
+        float[] ans = new float[sumOfStageDate];
+        for (int i = 0; i < sumOfStageDate; i++) {
+            ans[i] = daysBetween(beginningDateString, stageDateStrings[i]) / tot;
+        }
+        return ans;
+    }
+
     /***判断是否已经逾期***/
     public boolean ifOverDue() {
         return daysBetween(currentDateString, deadlineDateString) < 0;
@@ -214,7 +223,7 @@ public class ProjectTimeSchedule {
         int completedCnt = 0;
         for (int i = 0; i < sumOfStageDate; i++) {
             tot += sumOfStageTarget[i];
-            for (int j = 0; j < sumOfStageTarget[i]; i++) {
+            for (int j = 0; j < sumOfStageTarget[i]; j++) {
                 if (stageTargetFinish[i][j]) {
                     completedCnt++;
                 }

@@ -130,6 +130,7 @@ public class StageEditActivity extends AppCompatActivity {
                 ProjectTimeScheduleFileIO.removeScheduleFile(StageEditActivity.this, projectName);
                 ProjectTimeScheduleFileIO.createNewScheduleFile(StageEditActivity.this, projectTimeSchedule);
                 Intent intent = new Intent(StageEditActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 finish();
             }
@@ -162,7 +163,8 @@ public class StageEditActivity extends AppCompatActivity {
                 AppCompatEditText originalEditText = (AppCompatEditText) child;
 
                 AppCompatEditText newEditText = new AppCompatEditText(StageEditActivity.this);
-                newEditText.setLayoutParams(originalEditText.getLayoutParams());
+//                newEditText.setLayoutParams(originalEditText.getLayoutParams());
+                newEditText.setLayoutParams(new LinearLayout.LayoutParams(0,LinearLayout.LayoutParams.WRAP_CONTENT,7));
                 newEditText.setBackground(originalEditText.getBackground());
                 newEditText.setTextColor(originalEditText.getTextColors());
                 newEditText.setTextSize(20);
@@ -177,14 +179,16 @@ public class StageEditActivity extends AppCompatActivity {
             } else if (child instanceof CheckBox && !(child instanceof AppCompatButton)) {
                 CheckBox originalCheckBox = (CheckBox) child;
                 CheckBox newCheckBox = new CheckBox(StageEditActivity.this);
-                newCheckBox.setLayoutParams(originalCheckBox.getLayoutParams());
+//                newCheckBox.setLayoutParams(originalCheckBox.getLayoutParams());
+                newCheckBox.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
                 newCheckBox.setChecked(isChecked);
                 newLinearLayout.addView(newCheckBox);
             } else if (child instanceof AppCompatButton) {
                 // 复制 Button
                 AppCompatButton originalButton = (AppCompatButton) child;
                 AppCompatButton newButton = new AppCompatButton(StageEditActivity.this);
-                newButton.setLayoutParams(originalButton.getLayoutParams());
+//                newButton.setLayoutParams(originalButton.getLayoutParams());
+                newButton.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
                 newButton.setText(originalButton.getText());
                 newButton.setBackground(originalButton.getBackground());
                 newButton.setTextColor(originalButton.getTextColors());

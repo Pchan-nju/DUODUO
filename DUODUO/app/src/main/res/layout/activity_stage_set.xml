@@ -103,7 +103,7 @@
                 android:text="Divide your stage into targets"
                 android:layout_marginTop="12dp"
                 android:layout_marginStart="32dp"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/blue_dark_state"/>
 

@@ -177,7 +177,7 @@
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/background_edit_text"
                 android:ems="10"
-                android:hint="Enter your expected stage number of the project"
+                android:hint="Divide your project into stages"
                 android:inputType="number"
                 android:padding="8dp"
                 android:textColor="@color/blue_dark_state"

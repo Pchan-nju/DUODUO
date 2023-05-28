@@ -20,7 +20,7 @@ public class DeleteProjectActivity extends AppCompatActivity {
         // 获取要删除的project
         Intent intent = getIntent();
         String projectName = intent.getStringExtra("Project name");
-        ProjectTimeSchedule projectTimeSchedule = ProjectTimeScheduleFileIO.getScheduleFromFile(MainActivity.getAppContext(), projectName);
+        ProjectTimeSchedule projectTimeSchedule = ProjectTimeScheduleFileIO.getScheduleFromFile(this, projectName);
         // 设置 Project 标题
         TextView projNameView = findViewById(R.id.projName);
         projNameView.setText(projectName);
@@ -59,6 +59,7 @@ public class DeleteProjectActivity extends AppCompatActivity {
                 editor.apply();
                 finish();
                 Intent mainIntent = new Intent(DeleteProjectActivity.this, MainActivity.class);
+                mainIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(mainIntent);
             }
         });
@@ -67,6 +68,7 @@ public class DeleteProjectActivity extends AppCompatActivity {
     public void Back(View view) {
         finish();
         Intent mainIntent = new Intent(DeleteProjectActivity.this, MainActivity.class);
+        mainIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(mainIntent);
     }
 }

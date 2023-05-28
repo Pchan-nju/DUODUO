@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     public ProjectTimeSchedule projectTimeSchedule;
     public TextView projectNameTextView;
     public String[] projectNameStrings;
-    int sumOfUserProjects;
+    private int sumOfUserProjects;
     public ConstraintLayout constraintLayout;
     public TimeScheduleCircleView timeScheduleCircleView;
     public MaterialButton originAddProjectButton;
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Start", "A new project");
             Intent intent = new Intent(this, StartActivity.class);
             startActivity(intent);
-            finish();
+//            finish();
         } else {
             Log.d("Start", "already have " + sumOfUserProjects + " projects");
             for (int i = 1; i <= sumOfUserProjects; i++) {
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("stageIndex", finalI + 1);
                     intent.putExtra("Project name", projectTimeSchedule.getProjectName());
                     startActivity(intent);
-                    finish();
+//                    finish();
                 }
             });
         }
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("Project name", projectNameStrings[lastProjectIndex[0] - 1]);
                 intent.putExtra("Project index", lastProjectIndex[0]);
                 startActivity(intent);
-                finish();
+//                finish();
             }
         });
 
@@ -187,7 +187,14 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     projectButtonsLinearLayout.removeView(editButton);
                     projectButtonsLinearLayout.addView(projectButtons[lastProjectIndex[0]], lastProjectIndex[0] - 1);
-                    projectButtonsLinearLayout.removeView(projectButtons[finalI]);
+                    projectButtonsLinearLayout.removeView(projectButtons[finalI]);// 判断这个Project是否存在
+                    if (getSumOfUserProjects() >= finalI) {
+                        editButton.setText("Edit");
+                        editButton.setEnabled(true);
+                    } else {
+                        editButton.setText("New!");
+                        editButton.setEnabled(false);
+                    }
                     projectButtonsLinearLayout.addView(editButton, finalI - 1);
                     lastProjectIndex[0] = finalI;
                     Log.d("Press Project", "" + finalI);
@@ -204,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, DeleteProjectActivity.class);
                 intent.putExtra("Project name", projectNameStrings[lastProjectIndex[0] - 1]);
                 startActivity(intent);
-                finish();
+//                finish();
             }
         });
 
@@ -298,7 +305,7 @@ public class MainActivity extends AppCompatActivity {
                             intent.putExtra("stageIndex", finalI + 1);
                             intent.putExtra("Project name", projectTimeSchedule.getProjectName());
                             startActivity(intent);
-                            finish();
+//                            finish();
                         }
                     });
                 }
@@ -337,5 +344,9 @@ public class MainActivity extends AppCompatActivity {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
+    }
+
+    public int getSumOfUserProjects() {
+        return this.sumOfUserProjects;
     }
 }
