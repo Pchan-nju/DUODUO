@@ -33,7 +33,7 @@ public class TimeScheduleCircleView extends View {
         /**绘制不同大小的圆**/
         if (projectTimeSchedule.ifOverDue()) {
             /**画deadline的圆**/
-            paint.setColor(0x3FDC143C);
+            paint.setColor(0x33390e67);
             paint.setStyle(Paint.Style.FILL);
             canvas.drawCircle(centerPositionX, centerPositionY, radius, paint);
             paint.setColor(0xFFFFFFFF);

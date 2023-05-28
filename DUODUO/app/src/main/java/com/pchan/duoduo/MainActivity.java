@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         projectNameTextView = findViewById(R.id.textView7);
         final SharedPreferences sp = getSharedPreferences("user_project", MODE_PRIVATE);
-        sumOfUserProjects = sp.getInt("sum",0);
+        sumOfUserProjects = sp.getInt("sum",-1);
         projectNameStrings = new String[sumOfUserProjects + 2];
 
         // 获取底下一排按钮的LinearLayout
@@ -75,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
         }
         if (sumOfUserProjects == 0) {
             Log.d("Start", "A new project");
+//            SharedPreferences.Editor editor = sp.edit();
+//            editor.putInt("sum", 0);
+//            editor.apply();
             Intent intent = new Intent(this, StartActivity.class);
             startActivity(intent);
 //            finish();
@@ -179,30 +182,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 按钮切换
-        for (int i = 1; i < MAX_PROJECT_NUM; i++) {
-            int finalI = i;
-            projectButtons[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    projectButtonsLinearLayout.removeView(editButton);
-                    projectButtonsLinearLayout.addView(projectButtons[lastProjectIndex[0]], lastProjectIndex[0] - 1);
-                    projectButtonsLinearLayout.removeView(projectButtons[finalI]);// 判断这个Project是否存在
-                    if (getSumOfUserProjects() >= finalI) {
-                        editButton.setText("Edit");
-                        editButton.setEnabled(true);
-                    } else {
-                        editButton.setText("New!");
-                        editButton.setEnabled(false);
-                    }
-                    projectButtonsLinearLayout.addView(editButton, finalI - 1);
-                    lastProjectIndex[0] = finalI;
-                    Log.d("Press Project", "" + finalI);
-                    changeProject(finalI);
-                }
-            });
-        }
-
         // delete 按钮
         ImageButton deleteButton = (ImageButton) findViewById(R.id.DeleteButton);
         deleteButton.setOnClickListener(new View.OnClickListener() {
@@ -215,6 +194,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // 按钮切换
+        for (int i = 1; i < MAX_PROJECT_NUM; i++) {
+            int finalI = i;
+            projectButtons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    projectButtonsLinearLayout.removeView(editButton);
+                    projectButtonsLinearLayout.addView(projectButtons[lastProjectIndex[0]], lastProjectIndex[0] - 1);
+                    projectButtonsLinearLayout.removeView(projectButtons[finalI]);// 判断这个Project是否存在
+                    if (getSumOfUserProjects() >= finalI) {
+                        editButton.setText("Edit");
+                        editButton.setEnabled(true);
+                        deleteButton.setEnabled(true);
+                    } else {
+                        editButton.setText("New!");
+                        editButton.setEnabled(false);
+                        deleteButton.setEnabled(false);
+                    }
+                    projectButtonsLinearLayout.addView(editButton, finalI - 1);
+                    lastProjectIndex[0] = finalI;
+                    Log.d("Press Project", "" + finalI);
+                    changeProject(finalI);
+                }
+            });
+        }
     }
 
     public static Context getAppContext(){

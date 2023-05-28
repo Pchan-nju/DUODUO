@@ -36,7 +36,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Create your project"
-                        android:textSize="40sp"
+                        android:textSize="36dp"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         android:textColor="@color/blue_tint_state"
