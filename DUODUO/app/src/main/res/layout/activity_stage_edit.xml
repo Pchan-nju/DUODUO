@@ -118,12 +118,12 @@
 
                 <android.widget.CheckBox
                     android:id="@+id/checkBox"
-                    android:layout_width="wrap_content"
-                    android:checked="false"
+                    android:layout_width="48dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="-8dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:checked="false" />
 
                 <EditText
                     android:id="@+id/targetText"

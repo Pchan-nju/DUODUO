@@ -80,7 +80,7 @@ public class FirstSetActivity extends AppCompatActivity {
                     Toast.makeText(FirstSetActivity.this, "Please input your deadline correctly", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(sumOfStage)) {
                     Toast.makeText(FirstSetActivity.this, "Please input your number of stages", Toast.LENGTH_SHORT).show();
-                } else if (Integer.parseInt(sumOfStage) >= 4 || Integer.parseInt(sumOfStage) < 0) {
+                } else if (Integer.parseInt(sumOfStage) >= 6 || Integer.parseInt(sumOfStage) < 0) {
                     Toast.makeText(FirstSetActivity.this, "Number of stages should be less than 5 and more than 0", Toast.LENGTH_SHORT).show();
                 } else {
                     if (TextUtils.isEmpty(beginningDate)) {
