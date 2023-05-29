@@ -17,8 +17,8 @@
 
                 <ImageSwitcher
                     android:id="@+id/imageSwitcher"
-                    android:layout_width="6dp"
-                    android:layout_height="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="top"
                     android:layout_marginBottom="50dp"
                     android:adjustViewBounds="true"
