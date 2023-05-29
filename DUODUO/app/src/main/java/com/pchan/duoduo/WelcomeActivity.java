@@ -3,6 +3,7 @@ package com.pchan.duoduo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -15,7 +16,8 @@ import android.widget.ImageView;
 import android.widget.ViewSwitcher;
 
 public class WelcomeActivity extends AppCompatActivity {
-    private int[] arrayPicture = new int[]{R.drawable.image1, R.drawable.image2};
+    private int[] arrayPicture = new int[]{R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4,
+    R.drawable.image5, R.drawable.image6, R.drawable.image6, R.drawable.image7, R.drawable.image8, R.drawable.image9, R.drawable.image10, R.drawable.image11, R.drawable.image12};
     private ImageSwitcher imageSwitcher;
     private int index = 0;
     //手指按下和抬起的x坐标
@@ -31,6 +33,7 @@ public class WelcomeActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

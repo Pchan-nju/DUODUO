@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -79,6 +80,9 @@ public class StageSetActivity extends AppCompatActivity {
 
         // 获取stageDueEditText
         stageDueEditText = findViewById(R.id.stageDueTimeEditTextView);
+        if (sumOfStage == 1) {
+            stageDueEditText.setText(firstSetMessage[2]);
+        }
 
         /***Next按钮功能实现***/
         Button nextButton = findViewById(R.id.nextButton1); // 设置为NEXT按钮
@@ -125,7 +129,9 @@ public class StageSetActivity extends AppCompatActivity {
 
                     ProjectTimeScheduleFileIO.createNewScheduleFile(context, projectTimeSchedule);
                     Intent intent = new Intent(StageSetActivity.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                    finish();
                 } else {
                     if (sumOfStage == stageIndex) {
                         nextButton.setText("Finish");
@@ -159,6 +165,7 @@ public class StageSetActivity extends AppCompatActivity {
 
                         AppCompatEditText newEditText = new AppCompatEditText(StageSetActivity.this);
                         newEditText.setLayoutParams(originalEditText.getLayoutParams());
+                        newEditText.setLayoutParams(new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 6));
                         newEditText.setBackground(originalEditText.getBackground());
                         newEditText.setTextColor(originalEditText.getTextColors());
                         newEditText.setTextSize(20);
@@ -174,7 +181,8 @@ public class StageSetActivity extends AppCompatActivity {
                         TextView originalTextView = (TextView) child;
 
                         TextView newTextView = new TextView(StageSetActivity.this);
-                        newTextView.setLayoutParams(originalTextView.getLayoutParams());
+//                        newTextView.setLayoutParams(originalTextView.getLayoutParams());
+                        newTextView.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
                         newTextView.setText("0" + sumOfEditText);
                         newTextView.setBackground(originalTextView.getBackground());
                         newTextView.setGravity(Gravity.CENTER);
@@ -186,7 +194,8 @@ public class StageSetActivity extends AppCompatActivity {
                         // 复制 Button
                         AppCompatButton originalButton = (AppCompatButton) child;
                         AppCompatButton newButton = new AppCompatButton(StageSetActivity.this);
-                        newButton.setLayoutParams(originalButton.getLayoutParams());
+//                        newButton.setLayoutParams(originalButton.getLayoutParams());
+                        newButton.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
                         newButton.setText(originalButton.getText());
                         newButton.setBackground(originalButton.getBackground());
                         newButton.setTextColor(originalButton.getTextColors());
@@ -212,5 +221,9 @@ public class StageSetActivity extends AppCompatActivity {
                 linearLayout.addView(newLinearLayout, linearLayout.getChildCount() - 2);
             }
         });
+    }
+
+    public void btnNext(View view) {
+        finish();
     }
 }

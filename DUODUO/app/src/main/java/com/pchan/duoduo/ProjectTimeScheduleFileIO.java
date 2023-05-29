@@ -1,6 +1,7 @@
 package com.pchan.duoduo;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -60,7 +61,7 @@ public class ProjectTimeScheduleFileIO{
                 for(int j = 0; j < s_cols; j++){
                     Sb.append(stageTarget[i][j]);
                     if(j != s_cols - 1){
-                        sb.append(",");
+                        Sb.append(",");
                     }
                 }
                 Sb.append("\n");
@@ -124,7 +125,11 @@ public class ProjectTimeScheduleFileIO{
             int c = Integer.parseInt(lines_and_cols[1]);
             String[][] stageTarget = new String[l][c];
             for(int i = 8; i < 8 + l; i++){
-                stageTarget[i - 8] = linesArray[i].split(",");
+                String[] a = linesArray[i].split(",");
+                for(int j = 0; j < c; j++){
+                    stageTarget[i - 8][j] = a[j];
+                }
+                //stageTarget[i - 8] = linesArray[i].split(",");
             }
             projectTimeSchedule.setStageTarget(stageTarget);
             String[] lines_and_cols_2 = linesArray[8 + l].split(",");

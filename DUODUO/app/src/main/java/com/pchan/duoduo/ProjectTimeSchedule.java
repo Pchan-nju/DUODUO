@@ -9,9 +9,6 @@ import java.util.concurrent.TimeUnit;
 /*
 * 记录用户单个project的日期安排信息
 * 日期格式均为 "yyyy-MM-dd"
-* TODO() {
-*   是否超过了预定的时间：阶段期望时间或者deadline;
-*  }
 * */
 public class ProjectTimeSchedule {
     private String projectName;
@@ -23,9 +20,13 @@ public class ProjectTimeSchedule {
     private String deadlineDateString;
     private int sumOfStageDate = 0;
     private String[] stageDateStrings = {"", "", "", "", ""}; // 最多设置5个中间阶段时间点
-    private int[] sumOfStageTarget = new int[5];
-    private String[][] stageTarget = new String[5][5]; // stageTarget[i][j] 表示 第 i + 1 个stage第 j + 1 个目标
-    private boolean[][] stageTargetFinish = new boolean[5][5];
+    private int[] sumOfStageTarget = new int[10];
+    private String[][] stageTarget = new String[10][10]; // stageTarget[i][j] 表示 第 i + 1 个stage第 j + 1 个目标
+    private boolean[][] stageTargetFinish = new boolean[10][10];
+
+    public String getCurrentDateString(){
+        return currentDateString;
+    }
 
     public ProjectTimeSchedule(String projectName,String beginningDateString, String deadlineDateString, int sumOfStageDate, String... stageDateStrings) {
         this.projectName = projectName;
@@ -141,6 +142,9 @@ public class ProjectTimeSchedule {
     public float ratioOfPassedDays() {
         return (float) daysBetween(beginningDateString, currentDateString) / daysBetween(beginningDateString, deadlineDateString);
     }
+    public int numberOfPassedDays() {
+        return daysBetween(beginningDateString, currentDateString);
+    }
 
     public float ratioOfExpectedDay() {
         return (float) daysBetween(beginningDateString, expectDateString) / daysBetween(beginningDateString, deadlineDateString);
@@ -177,6 +181,15 @@ public class ProjectTimeSchedule {
         return ans;
     }
 
+    public float[] ratioOfStageFromBeginningToExpected() {
+        float tot = daysBetween(beginningDateString, expectDateString);
+        float[] ans = new float[sumOfStageDate];
+        for (int i = 0; i < sumOfStageDate; i++) {
+            ans[i] = daysBetween(beginningDateString, stageDateStrings[i]) / tot;
+        }
+        return ans;
+    }
+
     /***判断是否已经逾期***/
     public boolean ifOverDue() {
         return daysBetween(currentDateString, deadlineDateString) < 0;
@@ -202,5 +215,39 @@ public class ProjectTimeSchedule {
 
     public boolean ifExpectedDateOverDue() {
         return (daysBetween(currentDateString, expectDateString) < 0);
+    }
+
+    // target完成度
+    public int ratioOfCompletedTargets() {
+        int tot = 0;
+        int completedCnt = 0;
+        for (int i = 0; i < sumOfStageDate; i++) {
+            tot += sumOfStageTarget[i];
+            for (int j = 0; j < sumOfStageTarget[i]; j++) {
+                if (stageTargetFinish[i][j]) {
+                    completedCnt++;
+                }
+            }
+        }
+        if (tot != 0) {
+            return completedCnt * 100 / tot;
+        } else {
+            return 0;
+        }
+    }
+
+    // 每个阶段target的完成度
+    public float ratioOfCompletedTargetsOfStage(int stageIndex) {
+        int completedCnt = 0;
+        for (int i = 0; i < sumOfStageTarget[stageIndex - 1]; i++) {
+            if (stageTargetFinish[stageIndex - 1][i]) {
+                completedCnt++;
+            }
+        }
+        if (sumOfStageTarget[stageIndex - 1] != 0) {
+            return (float) completedCnt / sumOfStageTarget[stageIndex - 1];
+        } else {
+            return 1.0f;
+        }
     }
 }
