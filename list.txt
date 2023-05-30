@@ -1,0 +1,1014 @@
+DUODUO
+©¦  list.txt
+©¦  README.md
+©¦  
+©À©¤.idea
+©¦      .gitignore
+©¦      DUODUO.iml
+©¦      misc.xml
+©¦      modules.xml
+©¦      ProjectManager.iml
+©¦      vcs.xml
+©¦      
+©¸©¤DUODUO
+    ©¦  .gitignore
+    ©¦  build.gradle
+    ©¦  gradle.properties
+    ©¦  gradlew
+    ©¦  gradlew.bat
+    ©¦  local.properties
+    ©¦  settings.gradle
+    ©¦  
+    ©À©¤.gradle
+    ©¦  ©¦  file-system.probe
+    ©¦  ©¦  
+    ©¦  ©À©¤8.0
+    ©¦  ©¦  ©¦  gc.properties
+    ©¦  ©¦  ©¦  
+    ©¦  ©¦  ©À©¤checksums
+    ©¦  ©¦  ©¦      checksums.lock
+    ©¦  ©¦  ©¦      md5-checksums.bin
+    ©¦  ©¦  ©¦      sha1-checksums.bin
+    ©¦  ©¦  ©¦      
+    ©¦  ©¦  ©À©¤dependencies-accessors
+    ©¦  ©¦  ©¦      dependencies-accessors.lock
+    ©¦  ©¦  ©¦      gc.properties
+    ©¦  ©¦  ©¦      
+    ©¦  ©¦  ©À©¤executionHistory
+    ©¦  ©¦  ©¦      executionHistory.bin
+    ©¦  ©¦  ©¦      executionHistory.lock
+    ©¦  ©¦  ©¦      
+    ©¦  ©¦  ©À©¤fileChanges
+    ©¦  ©¦  ©¦      last-build.bin
+    ©¦  ©¦  ©¦      
+    ©¦  ©¦  ©À©¤fileHashes
+    ©¦  ©¦  ©¦      fileHashes.bin
+    ©¦  ©¦  ©¦      fileHashes.lock
+    ©¦  ©¦  ©¦      resourceHashesCache.bin
+    ©¦  ©¦  ©¦      
+    ©¦  ©¦  ©¸©¤vcsMetadata
+    ©¦  ©À©¤buildOutputCleanup
+    ©¦  ©¦      buildOutputCleanup.lock
+    ©¦  ©¦      cache.properties
+    ©¦  ©¦      outputFiles.bin
+    ©¦  ©¦      
+    ©¦  ©¸©¤vcs-1
+    ©¦          gc.properties
+    ©¦          
+    ©À©¤.idea
+    ©¦      .gitignore
+    ©¦      compiler.xml
+    ©¦      gradle.xml
+    ©¦      kotlinc.xml
+    ©¦      misc.xml
+    ©¦      vcs.xml
+    ©¦      workspace.xml
+    ©¦      
+    ©À©¤app
+    ©¦  ©¦  .gitignore
+    ©¦  ©¦  build.gradle
+    ©¦  ©¦  proguard-rules.pro
+    ©¦  ©¦  
+    ©¦  ©À©¤build
+    ©¦  ©¦  ©À©¤generated
+    ©¦  ©¦  ©¦  ©À©¤ap_generated_sources
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©¸©¤res
+    ©¦  ©¦  ©¦      ©À©¤pngs
+    ©¦  ©¦  ©¦      ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦      ©¸©¤resValues
+    ©¦  ©¦  ©¦          ©¸©¤debug
+    ©¦  ©¦  ©À©¤intermediates
+    ©¦  ©¦  ©¦  ©À©¤aar_metadata_check
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©À©¤annotation_processor_list
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          annotationProcessors.json
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤apk
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          app-debug.apk
+    ©¦  ©¦  ©¦  ©¦          output-metadata.json
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤apk_ide_redirect_file
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          redirect.txt
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤app_metadata
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          app-metadata.properties
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤assets
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©À©¤compatible_screen_manifest
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          output-metadata.json
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤compile_and_runtime_not_namespaced_r_class_jar
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          R.jar
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤compressed_assets
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©À©¤data_binding_layout_info_type_merge
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©À©¤data_binding_layout_info_type_package
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©À©¤desugar_graph
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©¦          ©À©¤currentProject
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©À©¤dirs_bucket_0
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      graph.bin
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©À©¤dirs_bucket_1
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      graph.bin
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©À©¤dirs_bucket_2
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      graph.bin
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©À©¤dirs_bucket_3
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      graph.bin
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©À©¤jar_6ffe2b329b63373346e9e3f1fa78fdf53e384c277f63ef19efc8a9fa434e8e6b_bucket_0
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      graph.bin
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©À©¤jar_6ffe2b329b63373346e9e3f1fa78fdf53e384c277f63ef19efc8a9fa434e8e6b_bucket_1
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      graph.bin
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©À©¤jar_6ffe2b329b63373346e9e3f1fa78fdf53e384c277f63ef19efc8a9fa434e8e6b_bucket_2
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      graph.bin
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¦      
+    ©¦  ©¦  ©¦  ©¦          ©¦  ©¸©¤jar_6ffe2b329b63373346e9e3f1fa78fdf53e384c277f63ef19efc8a9fa434e8e6b_bucket_3
+    ©¦  ©¦  ©¦  ©¦          ©¦          graph.bin
+    ©¦  ©¦  ©¦  ©¦          ©¦          
+    ©¦  ©¦  ©¦  ©¦          ©À©¤externalLibs
+    ©¦  ©¦  ©¦  ©¦          ©À©¤mixedScopes
+    ©¦  ©¦  ©¦  ©¦          ©¸©¤otherProjects
+    ©¦  ©¦  ©¦  ©À©¤dex
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©À©¤mergeExtDexDebug
+    ©¦  ©¦  ©¦  ©¦      ©¦      classes.dex
+    ©¦  ©¦  ©¦  ©¦      ©¦      
+    ©¦  ©¦  ©¦  ©¦      ©À©¤mergeLibDexDebug
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤0
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤1
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤10
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤11
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤12
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤13
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤14
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤15
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤2
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤3
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤4
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤5
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤6
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤7
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©À©¤8
+    ©¦  ©¦  ©¦  ©¦      ©¦  ©¸©¤9
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤mergeProjectDexDebug
+    ©¦  ©¦  ©¦  ©¦          ©À©¤0
+    ©¦  ©¦  ©¦  ©¦          ©¦      classes.dex
+    ©¦  ©¦  ©¦  ©¦          ©¦      
+    ©¦  ©¦  ©¦  ©¦          ©À©¤1
+    ©¦  ©¦  ©¦  ©¦          ©À©¤10
+    ©¦  ©¦  ©¦  ©¦          ©À©¤11
+    ©¦  ©¦  ©¦  ©¦          ©À©¤12
+    ©¦  ©¦  ©¦  ©¦          ©À©¤13
+    ©¦  ©¦  ©¦  ©¦          ©¦      classes.dex
+    ©¦  ©¦  ©¦  ©¦          ©¦      
+    ©¦  ©¦  ©¦  ©¦          ©À©¤14
+    ©¦  ©¦  ©¦  ©¦          ©À©¤15
+    ©¦  ©¦  ©¦  ©¦          ©À©¤2
+    ©¦  ©¦  ©¦  ©¦          ©À©¤3
+    ©¦  ©¦  ©¦  ©¦          ©À©¤4
+    ©¦  ©¦  ©¦  ©¦          ©À©¤5
+    ©¦  ©¦  ©¦  ©¦          ©À©¤6
+    ©¦  ©¦  ©¦  ©¦          ©À©¤7
+    ©¦  ©¦  ©¦  ©¦          ©À©¤8
+    ©¦  ©¦  ©¦  ©¦          ©¸©¤9
+    ©¦  ©¦  ©¦  ©À©¤dex_archive_input_jar_hashes
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          out
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤dex_number_of_buckets_file
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          out
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤duplicate_classes_check
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©À©¤external_file_lib_dex_archives
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©À©¤external_libs_dex_archive
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©À©¤external_libs_dex_archive_with_artifact_transforms
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©À©¤incremental
+    ©¦  ©¦  ©¦  ©¦  ©À©¤debug
+    ©¦  ©¦  ©¦  ©¦  ©¦  ©À©¤mergeDebugResources
+    ©¦  ©¦  ©¦  ©¦  ©¦  ©¦  ©¦  compile-file-map.properties
+    ©¦  ©¦  ©¦  ©¦  ©¦  ©¦  ©¦  merger.xml
+    ©¦  ©¦  ©¦  ©¦  ©¦  ©¦  ©¦  
+    ©¦  ©¦  ©¦  ©¦  ©¦  ©¦  ©À©¤merged.dir
+    ©¦  ©¦  ©¦  ©¦  ©¦  ©¦  ©¸©¤stripped.dir
+    ©¦  ©¦  ©¦  ©¦  ©¦  ©¸©¤packageDebugResources
+    ©¦  ©¦  ©¦  ©¦  ©¦      ©¦  compile-file-map.properties
+    ©¦  ©¦  ©¦  ©¦  ©¦      ©¦  merger.xml
+    ©¦  ©¦  ©¦  ©¦  ©¦      ©¦  
+    ©¦  ©¦  ©¦  ©¦  ©¦      ©À©¤merged.dir
+    ©¦  ©¦  ©¦  ©¦  ©¦      ©¸©¤stripped.dir
+    ©¦  ©¦  ©¦  ©¦  ©À©¤debug-mergeJavaRes
+    ©¦  ©¦  ©¦  ©¦  ©¦  ©¦  merge-state
+    ©¦  ©¦  ©¦  ©¦  ©¦  ©¦  
+    ©¦  ©¦  ©¦  ©¦  ©¦  ©¸©¤zip-cache
+    ©¦  ©¦  ©¦  ©¦  ©¦          1BVp9iL4lgc6_IFxI7ZUnH5mJ0Q=
+    ©¦  ©¦  ©¦  ©¦  ©¦          28W8N+Sey58FzAgltxWLo7QTnF4=
+    ©¦  ©¦  ©¦  ©¦  ©¦          3zi_BmMW62vQkJfEopdHMzz0dWc=
+    ©¦  ©¦  ©¦  ©¦  ©¦          4dM6pWJMdK5_kPAHWXj3WIw_cx8=
+    ©¦  ©¦  ©¦  ©¦  ©¦          6cpXOu1JKOECszn2b_E7cZpL0AU=
+    ©¦  ©¦  ©¦  ©¦  ©¦          6zIhOISwSZcjvhHsXQEB3a3uMD4=
+    ©¦  ©¦  ©¦  ©¦  ©¦          9pCBGNw+O4QxCiHLH_htQ+K2AVU=
+    ©¦  ©¦  ©¦  ©¦  ©¦          aMILDv8KO4gIOUtzI5SAO3T18fQ=
+    ©¦  ©¦  ©¦  ©¦  ©¦          ApZp6thyfy7Zd1EygIE5XzxzdwQ=
+    ©¦  ©¦  ©¦  ©¦  ©¦          C0NpTaNptLjijFLEo0EIa9bnuCU=
+    ©¦  ©¦  ©¦  ©¦  ©¦          eA7Qex8DuLATRonNNSKqWLmp63U=
+    ©¦  ©¦  ©¦  ©¦  ©¦          esCgKSU4m++9j6qgfLJQfr3V4uU=
+    ©¦  ©¦  ©¦  ©¦  ©¦          fjxw4wmMHHx+uiDMuT6uXuP2Iv0=
+    ©¦  ©¦  ©¦  ©¦  ©¦          FuGeOK5ngyC8Adv_FcugBE9myBw=
+    ©¦  ©¦  ©¦  ©¦  ©¦          gsG7XJTq5FlT+0TjDiq39Nq+pvk=
+    ©¦  ©¦  ©¦  ©¦  ©¦          g_GXdRtcrZ_7sbLpwo3jdjUjfjM=
+    ©¦  ©¦  ©¦  ©¦  ©¦          igjjqQfK_DQ0W69ABtYH7QCn2ho=
+    ©¦  ©¦  ©¦  ©¦  ©¦          INaPzE2dmCzsYZeDhFez9sEIYGg=
+    ©¦  ©¦  ©¦  ©¦  ©¦          J0jGxHz1+0DomWBdHWhDFzuIjoI=
+    ©¦  ©¦  ©¦  ©¦  ©¦          jwUrfoKqYy4HodNVJqNh3bIhIno=
+    ©¦  ©¦  ©¦  ©¦  ©¦          jxoiOvwbbyONGYPX7YayHJrgJfU=
+    ©¦  ©¦  ©¦  ©¦  ©¦          K3fl3n1TROOSDRtkDTvVMy5o3rY=
+    ©¦  ©¦  ©¦  ©¦  ©¦          MOK4BHz3zk_9agGsGRS1akMZyfk=
+    ©¦  ©¦  ©¦  ©¦  ©¦          n3s_GbSx4UyMdQc46tUzInLcCDU=
+    ©¦  ©¦  ©¦  ©¦  ©¦          n69CTSwFFpVWDamdUTNgj_+fLl8=
+    ©¦  ©¦  ©¦  ©¦  ©¦          nH4X_D0OyaL9C0joLrym8WBnpaI=
+    ©¦  ©¦  ©¦  ©¦  ©¦          nS1Dis+hvovE9XREoqXyMcKwRYc=
+    ©¦  ©¦  ©¦  ©¦  ©¦          O+Zjqg3n14vYi5tAcC8nvlU5xRM=
+    ©¦  ©¦  ©¦  ©¦  ©¦          ouzF4K4iud1nSPaqABPYMi4M4kA=
+    ©¦  ©¦  ©¦  ©¦  ©¦          pkLjtoSROFI1kYJPZp9GmZtGSzc=
+    ©¦  ©¦  ©¦  ©¦  ©¦          qKXZ7SpQ+_XASFvthK5nhtuQnNI=
+    ©¦  ©¦  ©¦  ©¦  ©¦          R8kLz9l72wsIZm833DJm_V9hhpw=
+    ©¦  ©¦  ©¦  ©¦  ©¦          rW1xTAiVFfcPT2oZ6w3dwq4MQrw=
+    ©¦  ©¦  ©¦  ©¦  ©¦          STIsCxmR7zlY8POR1KMMALN4SQY=
+    ©¦  ©¦  ©¦  ©¦  ©¦          tdM8rNW4WV9UYuJmcI5S7v3UnW4=
+    ©¦  ©¦  ©¦  ©¦  ©¦          tGQH04yJP2XUlM+vcTEUW1ceJ5I=
+    ©¦  ©¦  ©¦  ©¦  ©¦          UEp6UV0h4fDlKl6p2dd0WAvwWQo=
+    ©¦  ©¦  ©¦  ©¦  ©¦          UK9iKOEF7ngpDUwnPoCoXGk5ldY=
+    ©¦  ©¦  ©¦  ©¦  ©¦          UXU226jpcetij4gyiqkro53w9HU=
+    ©¦  ©¦  ©¦  ©¦  ©¦          v5UsV_2G1084g5kGlp0RiTkr_u4=
+    ©¦  ©¦  ©¦  ©¦  ©¦          Vc7gn5zOAc2_pcUxTfb7z5q_nFw=
+    ©¦  ©¦  ©¦  ©¦  ©¦          W0G1OUaxmlmfQMaI0kmIo3JnUVI=
+    ©¦  ©¦  ©¦  ©¦  ©¦          X5N6225tjtpzAN64LnM5g9ApP6Q=
+    ©¦  ©¦  ©¦  ©¦  ©¦          xM2LkkYmYUZ1c6YIYD8_zohh3eA=
+    ©¦  ©¦  ©¦  ©¦  ©¦          XssV3OLHu39kkLNioo0TZMNcxk8=
+    ©¦  ©¦  ©¦  ©¦  ©¦          y4VFb6VxXqXrFfQeVx_T6NnUUW0=
+    ©¦  ©¦  ©¦  ©¦  ©¦          yCx_f8iN92E4UfL9nw524W_JVms=
+    ©¦  ©¦  ©¦  ©¦  ©¦          YT2FS7D2yzY8QSD2y0H+T9JE+Ts=
+    ©¦  ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©¦  ©À©¤mergeDebugAssets
+    ©¦  ©¦  ©¦  ©¦  ©¦      merger.xml
+    ©¦  ©¦  ©¦  ©¦  ©¦      
+    ©¦  ©¦  ©¦  ©¦  ©À©¤mergeDebugJniLibFolders
+    ©¦  ©¦  ©¦  ©¦  ©¦      merger.xml
+    ©¦  ©¦  ©¦  ©¦  ©¦      
+    ©¦  ©¦  ©¦  ©¦  ©À©¤mergeDebugShaders
+    ©¦  ©¦  ©¦  ©¦  ©¦      merger.xml
+    ©¦  ©¦  ©¦  ©¦  ©¦      
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤packageDebug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤tmp
+    ©¦  ©¦  ©¦  ©¦          ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦              ©¦  dex-renamer-state.txt
+    ©¦  ©¦  ©¦  ©¦              ©¦  
+    ©¦  ©¦  ©¦  ©¦              ©¸©¤zip-cache
+    ©¦  ©¦  ©¦  ©¦                      androidResources
+    ©¦  ©¦  ©¦  ©¦                      javaResources0
+    ©¦  ©¦  ©¦  ©¦                      
+    ©¦  ©¦  ©¦  ©À©¤javac
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤classes
+    ©¦  ©¦  ©¦  ©¦          ©¸©¤com
+    ©¦  ©¦  ©¦  ©¦              ©¸©¤pchan
+    ©¦  ©¦  ©¦  ©¦                  ©¸©¤duoduo
+    ©¦  ©¦  ©¦  ©¦                          CircleView.class
+    ©¦  ©¦  ©¦  ©¦                          DeleteProjectActivity$1.class
+    ©¦  ©¦  ©¦  ©¦                          DeleteProjectActivity.class
+    ©¦  ©¦  ©¦  ©¦                          FirstEditActivity$1.class
+    ©¦  ©¦  ©¦  ©¦                          FirstEditActivity$2.class
+    ©¦  ©¦  ©¦  ©¦                          FirstEditActivity.class
+    ©¦  ©¦  ©¦  ©¦                          FirstSetActivity$1.class
+    ©¦  ©¦  ©¦  ©¦                          FirstSetActivity.class
+    ©¦  ©¦  ©¦  ©¦                          MainActivity$1.class
+    ©¦  ©¦  ©¦  ©¦                          MainActivity$2.class
+    ©¦  ©¦  ©¦  ©¦                          MainActivity$3.class
+    ©¦  ©¦  ©¦  ©¦                          MainActivity$4.class
+    ©¦  ©¦  ©¦  ©¦                          MainActivity$5.class
+    ©¦  ©¦  ©¦  ©¦                          MainActivity$6.class
+    ©¦  ©¦  ©¦  ©¦                          MainActivity.class
+    ©¦  ©¦  ©¦  ©¦                          NotificationService$1.class
+    ©¦  ©¦  ©¦  ©¦                          NotificationService.class
+    ©¦  ©¦  ©¦  ©¦                          ProjectTimeSchedule.class
+    ©¦  ©¦  ©¦  ©¦                          ProjectTimeScheduleFileIO.class
+    ©¦  ©¦  ©¦  ©¦                          StageCircleView.class
+    ©¦  ©¦  ©¦  ©¦                          StageEditActivity$1.class
+    ©¦  ©¦  ©¦  ©¦                          StageEditActivity$2.class
+    ©¦  ©¦  ©¦  ©¦                          StageEditActivity$3.class
+    ©¦  ©¦  ©¦  ©¦                          StageEditActivity$4.class
+    ©¦  ©¦  ©¦  ©¦                          StageEditActivity.class
+    ©¦  ©¦  ©¦  ©¦                          StageSetActivity$1.class
+    ©¦  ©¦  ©¦  ©¦                          StageSetActivity$2.class
+    ©¦  ©¦  ©¦  ©¦                          StageSetActivity$3$1.class
+    ©¦  ©¦  ©¦  ©¦                          StageSetActivity$3.class
+    ©¦  ©¦  ©¦  ©¦                          StageSetActivity.class
+    ©¦  ©¦  ©¦  ©¦                          StartActivity.class
+    ©¦  ©¦  ©¦  ©¦                          TimeScheduleCircleView.class
+    ©¦  ©¦  ©¦  ©¦                          WelcomeActivity$1.class
+    ©¦  ©¦  ©¦  ©¦                          WelcomeActivity$2.class
+    ©¦  ©¦  ©¦  ©¦                          WelcomeActivity$3.class
+    ©¦  ©¦  ©¦  ©¦                          WelcomeActivity.class
+    ©¦  ©¦  ©¦  ©¦                          
+    ©¦  ©¦  ©¦  ©À©¤local_only_symbol_list
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          R-def.txt
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤manifest_merge_blame_file
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          manifest-merger-blame-debug-report.txt
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤merged_java_res
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          base.jar
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤merged_jni_libs
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©À©¤merged_manifest
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          AndroidManifest.xml
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤merged_manifests
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          AndroidManifest.xml
+    ©¦  ©¦  ©¦  ©¦          output-metadata.json
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤merged_res
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          anim_slide_in_left.xml.flat
+    ©¦  ©¦  ©¦  ©¦          anim_slide_in_right.xml.flat
+    ©¦  ©¦  ©¦  ©¦          anim_slide_out_left.xml.flat
+    ©¦  ©¦  ©¦  ©¦          anim_slide_out_right.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable-v24_ic_launcher_foreground.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_background_add_target.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_background_edit_target.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_background_edit_text.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_background_next_button.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_background_number.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_background_quit_button.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_background_top_login.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_background_top_text.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_ic_launcher_background.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_image1.png.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_image10.png.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_image11.png.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_image12.png.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_image2.png.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_image3.png.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_image4.png.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_image5.png.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_image6.png.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_image7.png.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_image8.png.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_image9.png.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_notification.png.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_start_background_top.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_time_schedule_background.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_time_schedule_bottom_button.xml.flat
+    ©¦  ©¦  ©¦  ©¦          drawable_time_schedule_bottom_otherproj_button.xml.flat
+    ©¦  ©¦  ©¦  ©¦          layout_activity_delete_project.xml.flat
+    ©¦  ©¦  ©¦  ©¦          layout_activity_first_edit.xml.flat
+    ©¦  ©¦  ©¦  ©¦          layout_activity_first_set.xml.flat
+    ©¦  ©¦  ©¦  ©¦          layout_activity_main.xml.flat
+    ©¦  ©¦  ©¦  ©¦          layout_activity_stage_edit.xml.flat
+    ©¦  ©¦  ©¦  ©¦          layout_activity_stage_set.xml.flat
+    ©¦  ©¦  ©¦  ©¦          layout_activity_start.xml.flat
+    ©¦  ©¦  ©¦  ©¦          layout_activity_welcome.xml.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-anydpi-v26_ic_launcher.xml.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-anydpi-v26_ic_launcher_round.xml.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-hdpi_ic_launcher.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-hdpi_ic_launcher_foreground.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-hdpi_ic_launcher_round.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-mdpi_ic_launcher.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-mdpi_ic_launcher_foreground.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-mdpi_ic_launcher_round.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-xhdpi_ic_launcher.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-xhdpi_ic_launcher_foreground.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-xhdpi_ic_launcher_round.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-xxhdpi_ic_launcher.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-xxhdpi_ic_launcher_foreground.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-xxhdpi_ic_launcher_round.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-xxxhdpi_ic_launcher.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-xxxhdpi_ic_launcher_foreground.png.flat
+    ©¦  ©¦  ©¦  ©¦          mipmap-xxxhdpi_ic_launcher_round.png.flat
+    ©¦  ©¦  ©¦  ©¦          values-af_values-af.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-am_values-am.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ar_values-ar.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-as_values-as.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-az_values-az.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-b+es+419_values-b+es+419.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-b+sr+Latn_values-b+sr+Latn.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-be_values-be.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-bg_values-bg.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-bn_values-bn.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-bs_values-bs.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ca_values-ca.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-cs_values-cs.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-da_values-da.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-de_values-de.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-el_values-el.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-en-rAU_values-en-rAU.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-en-rCA_values-en-rCA.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-en-rGB_values-en-rGB.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-en-rIN_values-en-rIN.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-en-rXC_values-en-rXC.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-es-rUS_values-es-rUS.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-es_values-es.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-et_values-et.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-eu_values-eu.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-fa_values-fa.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-fi_values-fi.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-fr-rCA_values-fr-rCA.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-fr_values-fr.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-gl_values-gl.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-gu_values-gu.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-h320dp-port-v13_values-h320dp-port-v13.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-h360dp-land-v13_values-h360dp-land-v13.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-h480dp-land-v13_values-h480dp-land-v13.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-h550dp-port-v13_values-h550dp-port-v13.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-h720dp-v13_values-h720dp-v13.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-hdpi-v4_values-hdpi-v4.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-hi_values-hi.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-hr_values-hr.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-hu_values-hu.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-hy_values-hy.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-in_values-in.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-is_values-is.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-it_values-it.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-iw_values-iw.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ja_values-ja.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ka_values-ka.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-kk_values-kk.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-km_values-km.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-kn_values-kn.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ko_values-ko.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ky_values-ky.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-land_values-land.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-large-v4_values-large-v4.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ldltr-v21_values-ldltr-v21.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ldrtl-v17_values-ldrtl-v17.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-lo_values-lo.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-lt_values-lt.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-lv_values-lv.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-mk_values-mk.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ml_values-ml.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-mn_values-mn.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-mr_values-mr.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ms_values-ms.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-my_values-my.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-nb_values-nb.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ne_values-ne.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-night-v8_values-night-v8.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-nl_values-nl.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-or_values-or.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-pa_values-pa.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-pl_values-pl.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-port_values-port.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-pt-rBR_values-pt-rBR.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-pt-rPT_values-pt-rPT.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-pt_values-pt.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ro_values-ro.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ru_values-ru.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-si_values-si.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-sk_values-sk.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-sl_values-sl.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-small-v4_values-small-v4.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-sq_values-sq.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-sr_values-sr.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-sv_values-sv.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-sw600dp-v13_values-sw600dp-v13.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-sw_values-sw.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ta_values-ta.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-te_values-te.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-th_values-th.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-tl_values-tl.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-tr_values-tr.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-uk_values-uk.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-ur_values-ur.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-uz_values-uz.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-v16_values-v16.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-v17_values-v17.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-v18_values-v18.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-v21_values-v21.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-v22_values-v22.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-v23_values-v23.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-v24_values-v24.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-v25_values-v25.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-v26_values-v26.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-v28_values-v28.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-v31_values-v31.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-vi_values-vi.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-w320dp-land-v13_values-w320dp-land-v13.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-w360dp-port-v13_values-w360dp-port-v13.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-w480dp-port-v13_values-w480dp-port-v13.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-w600dp-land-v13_values-w600dp-land-v13.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-watch-v20_values-watch-v20.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-watch-v21_values-watch-v21.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-xlarge-v4_values-xlarge-v4.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-zh-rCN_values-zh-rCN.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-zh-rHK_values-zh-rHK.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-zh-rTW_values-zh-rTW.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values-zu_values-zu.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          values_values.arsc.flat
+    ©¦  ©¦  ©¦  ©¦          xml_backup_rules.xml.flat
+    ©¦  ©¦  ©¦  ©¦          xml_data_extraction_rules.xml.flat
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤merged_res_blame_folder
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©¦          ©À©¤multi-v2
+    ©¦  ©¦  ©¦  ©¦          ©¦      debug.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-af.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-am.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ar.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-as.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-az.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-b+es+419.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-b+sr+Latn.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-be.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-bg.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-bn.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-bs.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ca.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-cs.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-da.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-de.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-el.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-en-rAU.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-en-rCA.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-en-rGB.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-en-rIN.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-en-rXC.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-es-rUS.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-es.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-et.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-eu.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-fa.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-fi.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-fr-rCA.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-fr.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-gl.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-gu.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-h320dp-port-v13.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-h360dp-land-v13.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-h480dp-land-v13.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-h550dp-port-v13.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-h720dp-v13.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-hdpi-v4.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-hi.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-hr.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-hu.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-hy.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-in.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-is.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-it.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-iw.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ja.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ka.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-kk.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-km.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-kn.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ko.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ky.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-land.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-large-v4.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ldltr-v21.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ldrtl-v17.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-lo.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-lt.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-lv.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-mk.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ml.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-mn.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-mr.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ms.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-my.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-nb.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ne.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-night-v8.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-nl.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-or.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-pa.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-pl.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-port.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-pt-rBR.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-pt-rPT.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-pt.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ro.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ru.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-si.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-sk.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-sl.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-small-v4.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-sq.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-sr.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-sv.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-sw.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-sw600dp-v13.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ta.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-te.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-th.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-tl.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-tr.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-uk.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-ur.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-uz.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-v16.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-v17.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-v18.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-v21.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-v22.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-v23.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-v24.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-v25.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-v26.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-v28.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-v31.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-vi.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-w320dp-land-v13.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-w360dp-port-v13.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-w480dp-port-v13.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-w600dp-land-v13.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-watch-v20.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-watch-v21.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-xlarge-v4.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-zh-rCN.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-zh-rHK.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-zh-rTW.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values-zu.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      values.json
+    ©¦  ©¦  ©¦  ©¦          ©¦      
+    ©¦  ©¦  ©¦  ©¦          ©¸©¤single
+    ©¦  ©¦  ©¦  ©¦                  debug.json
+    ©¦  ©¦  ©¦  ©¦                  
+    ©¦  ©¦  ©¦  ©À©¤merged_shaders
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©À©¤mixed_scope_dex_archive
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©À©¤navigation_json
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          navigation.json
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤packaged_manifests
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          AndroidManifest.xml
+    ©¦  ©¦  ©¦  ©¦          output-metadata.json
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤packaged_res
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©À©¤anim
+    ©¦  ©¦  ©¦  ©¦      ©¦      slide_in_left.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      slide_in_right.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      slide_out_left.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      slide_out_right.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      
+    ©¦  ©¦  ©¦  ©¦      ©À©¤drawable
+    ©¦  ©¦  ©¦  ©¦      ©¦      background_add_target.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      background_edit_target.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      background_edit_text.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      background_next_button.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      background_number.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      background_quit_button.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      background_top_login.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      background_top_text.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher_background.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      image1.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      image10.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      image11.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      image12.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      image2.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      image3.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      image4.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      image5.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      image6.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      image7.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      image8.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      image9.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      notification.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      start_background_top.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      time_schedule_background.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      time_schedule_bottom_button.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      time_schedule_bottom_otherproj_button.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      
+    ©¦  ©¦  ©¦  ©¦      ©À©¤drawable-v24
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher_foreground.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      
+    ©¦  ©¦  ©¦  ©¦      ©À©¤layout
+    ©¦  ©¦  ©¦  ©¦      ©¦      activity_delete_project.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      activity_first_edit.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      activity_first_set.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      activity_main.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      activity_stage_edit.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      activity_stage_set.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      activity_start.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      activity_welcome.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      
+    ©¦  ©¦  ©¦  ©¦      ©À©¤mipmap-anydpi-v26
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher_round.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      
+    ©¦  ©¦  ©¦  ©¦      ©À©¤mipmap-hdpi-v4
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher_foreground.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher_round.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      
+    ©¦  ©¦  ©¦  ©¦      ©À©¤mipmap-mdpi-v4
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher_foreground.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher_round.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      
+    ©¦  ©¦  ©¦  ©¦      ©À©¤mipmap-xhdpi-v4
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher_foreground.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher_round.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      
+    ©¦  ©¦  ©¦  ©¦      ©À©¤mipmap-xxhdpi-v4
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher_foreground.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher_round.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      
+    ©¦  ©¦  ©¦  ©¦      ©À©¤mipmap-xxxhdpi-v4
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher_foreground.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      ic_launcher_round.png
+    ©¦  ©¦  ©¦  ©¦      ©¦      
+    ©¦  ©¦  ©¦  ©¦      ©À©¤values
+    ©¦  ©¦  ©¦  ©¦      ©¦      values.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      
+    ©¦  ©¦  ©¦  ©¦      ©À©¤values-night-v8
+    ©¦  ©¦  ©¦  ©¦      ©¦      values-night-v8.xml
+    ©¦  ©¦  ©¦  ©¦      ©¦      
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤xml
+    ©¦  ©¦  ©¦  ©¦              backup_rules.xml
+    ©¦  ©¦  ©¦  ©¦              data_extraction_rules.xml
+    ©¦  ©¦  ©¦  ©¦              
+    ©¦  ©¦  ©¦  ©À©¤processed_res
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©¦              output-metadata.json
+    ©¦  ©¦  ©¦  ©¦              resources-debug.ap_
+    ©¦  ©¦  ©¦  ©¦              
+    ©¦  ©¦  ©¦  ©À©¤project_dex_archive
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©¦          ©¦  149bfca5c467ad51a27b7eb11f36f40473851373c153b4ef6587220e58a9efce_0.jar
+    ©¦  ©¦  ©¦  ©¦          ©¦  149bfca5c467ad51a27b7eb11f36f40473851373c153b4ef6587220e58a9efce_1.jar
+    ©¦  ©¦  ©¦  ©¦          ©¦  149bfca5c467ad51a27b7eb11f36f40473851373c153b4ef6587220e58a9efce_2.jar
+    ©¦  ©¦  ©¦  ©¦          ©¦  149bfca5c467ad51a27b7eb11f36f40473851373c153b4ef6587220e58a9efce_3.jar
+    ©¦  ©¦  ©¦  ©¦          ©¦  
+    ©¦  ©¦  ©¦  ©¦          ©¸©¤com
+    ©¦  ©¦  ©¦  ©¦              ©¸©¤pchan
+    ©¦  ©¦  ©¦  ©¦                  ©¸©¤duoduo
+    ©¦  ©¦  ©¦  ©¦                          CircleView.dex
+    ©¦  ©¦  ©¦  ©¦                          DeleteProjectActivity$1.dex
+    ©¦  ©¦  ©¦  ©¦                          DeleteProjectActivity.dex
+    ©¦  ©¦  ©¦  ©¦                          FirstEditActivity$1.dex
+    ©¦  ©¦  ©¦  ©¦                          FirstEditActivity$2.dex
+    ©¦  ©¦  ©¦  ©¦                          FirstEditActivity.dex
+    ©¦  ©¦  ©¦  ©¦                          FirstSetActivity$1.dex
+    ©¦  ©¦  ©¦  ©¦                          FirstSetActivity.dex
+    ©¦  ©¦  ©¦  ©¦                          MainActivity$1.dex
+    ©¦  ©¦  ©¦  ©¦                          MainActivity$2.dex
+    ©¦  ©¦  ©¦  ©¦                          MainActivity$3.dex
+    ©¦  ©¦  ©¦  ©¦                          MainActivity$4.dex
+    ©¦  ©¦  ©¦  ©¦                          MainActivity$5.dex
+    ©¦  ©¦  ©¦  ©¦                          MainActivity$6.dex
+    ©¦  ©¦  ©¦  ©¦                          MainActivity.dex
+    ©¦  ©¦  ©¦  ©¦                          NotificationService$1.dex
+    ©¦  ©¦  ©¦  ©¦                          NotificationService.dex
+    ©¦  ©¦  ©¦  ©¦                          ProjectTimeSchedule.dex
+    ©¦  ©¦  ©¦  ©¦                          ProjectTimeScheduleFileIO.dex
+    ©¦  ©¦  ©¦  ©¦                          StageCircleView.dex
+    ©¦  ©¦  ©¦  ©¦                          StageEditActivity$1.dex
+    ©¦  ©¦  ©¦  ©¦                          StageEditActivity$2.dex
+    ©¦  ©¦  ©¦  ©¦                          StageEditActivity$3.dex
+    ©¦  ©¦  ©¦  ©¦                          StageEditActivity$4.dex
+    ©¦  ©¦  ©¦  ©¦                          StageEditActivity.dex
+    ©¦  ©¦  ©¦  ©¦                          StageSetActivity$1.dex
+    ©¦  ©¦  ©¦  ©¦                          StageSetActivity$2.dex
+    ©¦  ©¦  ©¦  ©¦                          StageSetActivity$3$1.dex
+    ©¦  ©¦  ©¦  ©¦                          StageSetActivity$3.dex
+    ©¦  ©¦  ©¦  ©¦                          StageSetActivity.dex
+    ©¦  ©¦  ©¦  ©¦                          StartActivity.dex
+    ©¦  ©¦  ©¦  ©¦                          TimeScheduleCircleView.dex
+    ©¦  ©¦  ©¦  ©¦                          WelcomeActivity$1.dex
+    ©¦  ©¦  ©¦  ©¦                          WelcomeActivity$2.dex
+    ©¦  ©¦  ©¦  ©¦                          WelcomeActivity$3.dex
+    ©¦  ©¦  ©¦  ©¦                          WelcomeActivity.dex
+    ©¦  ©¦  ©¦  ©¦                          
+    ©¦  ©¦  ©¦  ©À©¤runtime_symbol_list
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          R.txt
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤signing_config_versions
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          signing-config-versions.json
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤source_set_path_map
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          file-map.txt
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤stable_resource_ids_file
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          stableIds.txt
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤sub_project_dex_archive
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦      ©¸©¤out
+    ©¦  ©¦  ©¦  ©À©¤symbol_list_with_package_name
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¦          package-aware-r.txt
+    ©¦  ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¦  ©À©¤validate_signing_config
+    ©¦  ©¦  ©¦  ©¦  ©¸©¤debug
+    ©¦  ©¦  ©¦  ©¸©¤variant_model
+    ©¦  ©¦  ©¦      ©¸©¤debug
+    ©¦  ©¦  ©¦              variant_model.json
+    ©¦  ©¦  ©¦              
+    ©¦  ©¦  ©À©¤outputs
+    ©¦  ©¦  ©¦  ©¸©¤logs
+    ©¦  ©¦  ©¦          manifest-merger-debug-report.txt
+    ©¦  ©¦  ©¦          
+    ©¦  ©¦  ©¸©¤tmp
+    ©¦  ©¦      ©¸©¤compileDebugJavaWithJavac
+    ©¦  ©¦          ©¦  previous-compilation-data.bin
+    ©¦  ©¦          ©¦  
+    ©¦  ©¦          ©¸©¤compileTransaction
+    ©¦  ©¦              ©À©¤annotation-output
+    ©¦  ©¦              ©À©¤compile-output
+    ©¦  ©¦              ©¦  ©¸©¤com
+    ©¦  ©¦              ©¦      ©¸©¤pchan
+    ©¦  ©¦              ©¦          ©¸©¤duoduo
+    ©¦  ©¦              ©¸©¤stash-dir
+    ©¦  ©¦                      NotificationService$1.class.uniqueId1
+    ©¦  ©¦                      NotificationService.class.uniqueId2
+    ©¦  ©¦                      StartActivity.class.uniqueId5
+    ©¦  ©¦                      WelcomeActivity$1.class.uniqueId0
+    ©¦  ©¦                      WelcomeActivity$2.class.uniqueId4
+    ©¦  ©¦                      WelcomeActivity$3.class.uniqueId6
+    ©¦  ©¦                      WelcomeActivity.class.uniqueId3
+    ©¦  ©¦                      
+    ©¦  ©¸©¤src
+    ©¦      ©À©¤androidTest
+    ©¦      ©¦  ©¸©¤java
+    ©¦      ©¦      ©¸©¤com
+    ©¦      ©¦          ©¸©¤pchan
+    ©¦      ©¦              ©¸©¤duoduo
+    ©¦      ©¦                      ExampleInstrumentedTest.java
+    ©¦      ©¦                      
+    ©¦      ©À©¤main
+    ©¦      ©¦  ©¦  AndroidManifest.xml
+    ©¦      ©¦  ©¦  ic_launcher-playstore.png
+    ©¦      ©¦  ©¦  
+    ©¦      ©¦  ©À©¤java
+    ©¦      ©¦  ©¦  ©¸©¤com
+    ©¦      ©¦  ©¦      ©¸©¤pchan
+    ©¦      ©¦  ©¦          ©¸©¤duoduo
+    ©¦      ©¦  ©¦                  CircleView.java
+    ©¦      ©¦  ©¦                  DeleteProjectActivity.java
+    ©¦      ©¦  ©¦                  FirstEditActivity.java
+    ©¦      ©¦  ©¦                  FirstSetActivity.java
+    ©¦      ©¦  ©¦                  MainActivity.java
+    ©¦      ©¦  ©¦                  NotificationService.java
+    ©¦      ©¦  ©¦                  ProjectTimeSchedule.java
+    ©¦      ©¦  ©¦                  ProjectTimeScheduleFileIO.java
+    ©¦      ©¦  ©¦                  StageCircleView.java
+    ©¦      ©¦  ©¦                  StageEditActivity.java
+    ©¦      ©¦  ©¦                  StageSetActivity.java
+    ©¦      ©¦  ©¦                  StartActivity.java
+    ©¦      ©¦  ©¦                  TimeScheduleCircleView.java
+    ©¦      ©¦  ©¦                  WelcomeActivity.java
+    ©¦      ©¦  ©¦                  
+    ©¦      ©¦  ©¸©¤res
+    ©¦      ©¦      ©À©¤anim
+    ©¦      ©¦      ©¦      slide_in_left.xml
+    ©¦      ©¦      ©¦      slide_in_right.xml
+    ©¦      ©¦      ©¦      slide_out_left.xml
+    ©¦      ©¦      ©¦      slide_out_right.xml
+    ©¦      ©¦      ©¦      
+    ©¦      ©¦      ©À©¤drawable
+    ©¦      ©¦      ©¦      background_add_target.xml
+    ©¦      ©¦      ©¦      background_edit_target.xml
+    ©¦      ©¦      ©¦      background_edit_text.xml
+    ©¦      ©¦      ©¦      background_next_button.xml
+    ©¦      ©¦      ©¦      background_number.xml
+    ©¦      ©¦      ©¦      background_quit_button.xml
+    ©¦      ©¦      ©¦      background_top_login.xml
+    ©¦      ©¦      ©¦      background_top_text.xml
+    ©¦      ©¦      ©¦      ic_launcher_background.xml
+    ©¦      ©¦      ©¦      image1.png
+    ©¦      ©¦      ©¦      image10.png
+    ©¦      ©¦      ©¦      image11.png
+    ©¦      ©¦      ©¦      image12.png
+    ©¦      ©¦      ©¦      image2.png
+    ©¦      ©¦      ©¦      image3.png
+    ©¦      ©¦      ©¦      image4.png
+    ©¦      ©¦      ©¦      image5.png
+    ©¦      ©¦      ©¦      image6.png
+    ©¦      ©¦      ©¦      image7.png
+    ©¦      ©¦      ©¦      image8.png
+    ©¦      ©¦      ©¦      image9.png
+    ©¦      ©¦      ©¦      notification.png
+    ©¦      ©¦      ©¦      start_background_top.xml
+    ©¦      ©¦      ©¦      time_schedule_background.xml
+    ©¦      ©¦      ©¦      time_schedule_bottom_button.xml
+    ©¦      ©¦      ©¦      time_schedule_bottom_otherproj_button.xml
+    ©¦      ©¦      ©¦      
+    ©¦      ©¦      ©À©¤drawable-v24
+    ©¦      ©¦      ©¦      ic_launcher_foreground.xml
+    ©¦      ©¦      ©¦      
+    ©¦      ©¦      ©À©¤layout
+    ©¦      ©¦      ©¦      activity_delete_project.xml
+    ©¦      ©¦      ©¦      activity_first_edit.xml
+    ©¦      ©¦      ©¦      activity_first_set.xml
+    ©¦      ©¦      ©¦      activity_main.xml
+    ©¦      ©¦      ©¦      activity_stage_edit.xml
+    ©¦      ©¦      ©¦      activity_stage_set.xml
+    ©¦      ©¦      ©¦      activity_start.xml
+    ©¦      ©¦      ©¦      activity_welcome.xml
+    ©¦      ©¦      ©¦      
+    ©¦      ©¦      ©À©¤mipmap-anydpi-v26
+    ©¦      ©¦      ©¦      ic_launcher.xml
+    ©¦      ©¦      ©¦      ic_launcher_round.xml
+    ©¦      ©¦      ©¦      
+    ©¦      ©¦      ©À©¤mipmap-hdpi
+    ©¦      ©¦      ©¦      ic_launcher.png
+    ©¦      ©¦      ©¦      ic_launcher_foreground.png
+    ©¦      ©¦      ©¦      ic_launcher_round.png
+    ©¦      ©¦      ©¦      
+    ©¦      ©¦      ©À©¤mipmap-mdpi
+    ©¦      ©¦      ©¦      ic_launcher.png
+    ©¦      ©¦      ©¦      ic_launcher_foreground.png
+    ©¦      ©¦      ©¦      ic_launcher_round.png
+    ©¦      ©¦      ©¦      
+    ©¦      ©¦      ©À©¤mipmap-xhdpi
+    ©¦      ©¦      ©¦      ic_launcher.png
+    ©¦      ©¦      ©¦      ic_launcher_foreground.png
+    ©¦      ©¦      ©¦      ic_launcher_round.png
+    ©¦      ©¦      ©¦      
+    ©¦      ©¦      ©À©¤mipmap-xxhdpi
+    ©¦      ©¦      ©¦      ic_launcher.png
+    ©¦      ©¦      ©¦      ic_launcher_foreground.png
+    ©¦      ©¦      ©¦      ic_launcher_round.png
+    ©¦      ©¦      ©¦      
+    ©¦      ©¦      ©À©¤mipmap-xxxhdpi
+    ©¦      ©¦      ©¦      ic_launcher.png
+    ©¦      ©¦      ©¦      ic_launcher_foreground.png
+    ©¦      ©¦      ©¦      ic_launcher_round.png
+    ©¦      ©¦      ©¦      
+    ©¦      ©¦      ©À©¤values
+    ©¦      ©¦      ©¦      colors.xml
+    ©¦      ©¦      ©¦      ic_launcher_background.xml
+    ©¦      ©¦      ©¦      strings.xml
+    ©¦      ©¦      ©¦      themes.xml
+    ©¦      ©¦      ©¦      
+    ©¦      ©¦      ©À©¤values-night
+    ©¦      ©¦      ©¦      themes.xml
+    ©¦      ©¦      ©¦      
+    ©¦      ©¦      ©¸©¤xml
+    ©¦      ©¦              backup_rules.xml
+    ©¦      ©¦              data_extraction_rules.xml
+    ©¦      ©¦              
+    ©¦      ©¸©¤test
+    ©¦          ©¸©¤java
+    ©¦              ©¸©¤com
+    ©¦                  ©¸©¤pchan
+    ©¦                      ©¸©¤duoduo
+    ©¦                              ExampleUnitTest.java
+    ©¦                              
+    ©¸©¤gradle
+        ©¸©¤wrapper
+                gradle-wrapper.jar
+                gradle-wrapper.properties
+                
