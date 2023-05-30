@@ -250,4 +250,8 @@ public class ProjectTimeSchedule {
             return 1.0f;
         }
     }
+
+    public float ratioOfCurrentDateFromBeginning() {
+        return (float) daysBetween(beginningDateString, currentDateString) / daysBetween(beginningDateString, expectDateString);
+    }
 }

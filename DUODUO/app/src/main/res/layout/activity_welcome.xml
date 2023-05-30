@@ -15,18 +15,68 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="400dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="-100dp"
+                    android:layout_marginEnd="-100dp"
+                    android:background="@drawable/background_guide_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="-50dp"
+                    android:layout_marginEnd="-200dp"
+                    android:background="@drawable/background_guide_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="250dp"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="150dp"
+                    android:layout_marginStart="-200dp"
+                    android:background="@drawable/background_guide_title_2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/guide"
+                    style="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="150dp"
+                    android:gravity="center"
+                    android:text="G\nU\nI\nD\nE"
+                    android:textColor="@color/blue_tint_state"
+                    android:textSize="35dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textView16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageSwitcher
                     android:id="@+id/imageSwitcher"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top"
-                    android:layout_marginBottom="50dp"
-                    android:adjustViewBounds="true"
+                    android:layout_width="340dp"
+                    android:layout_height="600dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="40dp"
+                    android:background="@drawable/background_guide_picture"
                     android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints" />
+                    tools:ignore="MissingConstraints">
+
+                </ImageSwitcher>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/SkipButton"
@@ -36,12 +86,12 @@
                     android:layout_gravity="right"
                     android:layout_marginBottom="4dp"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/background_next_button"
+                    android:background="@drawable/background_quit_button"
                     android:onClick="btnSkip"
                     android:padding="4dp"
                     android:paddingStart="16dp"
                     android:text="SKIP "
-                    android:textColor="@color/blue_tint_state"
+                    android:textColor="@color/blue_light_state"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"

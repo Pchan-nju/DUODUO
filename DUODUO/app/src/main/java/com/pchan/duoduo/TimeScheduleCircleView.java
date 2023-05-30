@@ -49,7 +49,7 @@ public class TimeScheduleCircleView extends View {
             paint.setColor(0x9FE6E6FA);
             paint.setStrokeWidth(5);
             paint.setStyle(Paint.Style.FILL_AND_STROKE);
-            canvas.drawCircle(centerPositionX, centerPositionY, radius * projectTimeSchedule.ratioOfPassedDays() * projectTimeSchedule.ratioOfExpectedDay(), paint);
+            canvas.drawCircle(centerPositionX, centerPositionY, radius * projectTimeSchedule.ratioOfCurrentDateFromBeginning(), paint);
 
             /**画各个阶段的圆**/
             float[] ratiosOfStages = projectTimeSchedule.ratioOfStageFromBeginningToExpected();
