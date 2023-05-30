@@ -28,7 +28,7 @@ public class TimeScheduleCircleView extends View {
         super.onDraw(canvas);
         Paint paint = new Paint();
         paint.setAntiAlias(true); // 采用抗锯齿功能
-        final float radius = 400.0f;
+        final float radius = 500.0f;
 
         /**绘制不同大小的圆**/
         if (projectTimeSchedule.ifOverDue()) {
@@ -56,7 +56,7 @@ public class TimeScheduleCircleView extends View {
             paint.setStyle(Paint.Style.STROKE);
             for (int i = projectTimeSchedule.getSumOfStageDate() - 1; i >= 0; i--) {
 //            Log.d("LoadStageCircle", "success id " + ratiosOfStages[i]);
-                paint.setColor(0x3F483D8B);
+                paint.setColor(0x1F483D8B);
                 canvas.drawCircle(centerPositionX, centerPositionY, radius * ratiosOfStages[i], paint);
             }
         } else {
@@ -76,7 +76,7 @@ public class TimeScheduleCircleView extends View {
             paint.setStyle(Paint.Style.STROKE);
             for (int i = projectTimeSchedule.getSumOfStageDate() - 1; i >= 0; i--) {
 //            Log.d("LoadStageCircle", "success id " + ratiosOfStages[i]);
-                paint.setColor(0x3F483D8B);
+                paint.setColor(0x1F483D8B);
                 canvas.drawCircle(centerPositionX, centerPositionY, radius * ratiosOfStages[i], paint);
             }
         }
