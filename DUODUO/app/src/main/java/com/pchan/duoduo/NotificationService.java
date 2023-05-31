@@ -18,7 +18,7 @@ import java.util.Calendar;
 public class NotificationService extends Service {
     private static final String CHANNEL_ID = "notification_channel_id";
     private static final String CHANNEL_NAME = "my_channel";
-    private static final long INTERVAL_MILLS = 5 * 1000; // 若要每天早上8点进行通知任务的判断，需设置为一天的毫秒数24 * 60 * 60 * 1000
+    private static final long INTERVAL_MILLS = 24 * 60 * 60 * 1000;
     private static final int EXECUTION_HOUR = 8; //执行任务的小时
     private static final int EXECUTION_MINUTE = 0; //执行任务的分钟
 
@@ -154,6 +154,6 @@ public class NotificationService extends Service {
         }
 
         long delayMillis = scheduledTimeMillis - currentTimeMillis;
-        mHandler.postDelayed(mRunnable, INTERVAL_MILLS); //若要每天早上8点进行通知任务的判断，需设置为delayMillis
+        mHandler.postDelayed(mRunnable, delayMillis);
     }
 }
